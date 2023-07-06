@@ -1,0 +1,4 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-uhugo new posts/s'
+title = 'My New Hugo Site'
+theme = 'xmin'

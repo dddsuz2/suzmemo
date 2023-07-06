@@ -1,0 +1,9 @@
+[submodule "thems/xmin"]
+	path = thems/xmin
+	url = https://github.com/yihui/hugo-xmin.git
+[submodule "themes/xmin"]
+	path = themes/xmin
+	url = https://github.com/yihui/hugo-xmin.git
+[submodule "themes/holy"]
+	path = themes/holy
+	url = https://github.com/serkodev/holy.git
