@@ -1,4 +1,5 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-uhugo new posts/s'
+baseURL = '"https://dddsuz2.github.io/suzmemo/"'
+languageCode = 'ja'
 title = 'My New Hugo Site'
 theme = 'xmin'
+publishDir = "docs"
