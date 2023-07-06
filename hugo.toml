@@ -1,4 +1,4 @@
-baseURL = '"https://dddsuz2.github.io/suzmemo/"'
+baseURL = '"https://dddsuz2.github.io/suzmemo"'
 languageCode = 'ja'
 title = 'My New Hugo Site'
 theme = 'xmin'
