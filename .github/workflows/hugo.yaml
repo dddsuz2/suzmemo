@@ -59,7 +59,19 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Install poetry
+        run: |
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+          echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+      - name: Poetry install Dependencies
+        run: |
+          poetry install --no-interaction
+      - name: update README.md
+        working-directory: scripts
+        run: |
+          python gen_readme.py
+          mv mv README.md ./../README.md
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
