@@ -85,6 +85,7 @@ jobs:
       - name: Install Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python - --version ${{ env.POETRY_VERSION }}
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
         if: steps.poetry-cache.outputs.cache-hit == 'true'
       - name: Poetry install Dependencies
         run: |
