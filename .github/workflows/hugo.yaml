@@ -60,34 +60,20 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Cache poetry cache
-        id: poetry-cache
-        uses: actions/cache@v3
-        with:
-          path: /home/runner/.local
-          key: ${{ runner.os }}-python${{ env.PYTHON_VERSION }}-poetry${{ env.POETRY_VERSION }}
-          restore-keys: |
-            ${{ runner.os }}-${{ github.job }}-packages-
       - name: Set a path
         run: |
           echo "$HOME/.local/bin" >> $GITHUB_PATH
-        if: steps.poetry-cache.outputs.cache-hit == 'true'
-      - name: Cache packages
-        id: packages-cache
-        uses: actions/cache@v3
-        with:
-          path: /home/runner/.cache/pypoetry
-          key: ${{ runner.os }}-${{ github.job }}-packages-${{ hashFiles('**/poetry.lock') }}
       - name: Setup Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install Poetry
+        working-directory: scripts
         run: |
           curl -sSL https://install.python-poetry.org | python - --version ${{ env.POETRY_VERSION }}
           echo "$HOME/.local/bin" >> $GITHUB_PATH
-        if: steps.poetry-cache.outputs.cache-hit == 'true'
       - name: Poetry install Dependencies
+        working-directory: scripts
         run: |
           poetry install
       - name: update README.md
