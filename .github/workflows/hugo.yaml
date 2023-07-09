@@ -64,12 +64,10 @@ jobs:
         run: |
           echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Install Poetry
-        working-directory: scripts
         run: |
           curl -sSL https://install.python-poetry.org | python - 
           echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Poetry install Dependencies
-        working-directory: scripts
         run: |
           poetry install
       - name: update README.md
