@@ -1,3 +1,4 @@
+import os
 from mdutils.mdutils import MdUtils
 from xml.etree import ElementTree
 
@@ -5,7 +6,7 @@ from xml.etree import ElementTree
 def generate_readme(export_path: str):
     mdFile = MdUtils(file_name=export_path, title='suzmemo')
 
-    tag_names = get_title_and_links('/home/dada/suzmemo/docs/tags/index.xml')    
+    tag_names = get_title_and_links('../docs/tags/index.xml')    
     for tag in tag_names.keys():
         mdFile.new_header(level=1, title=tag)
         article_and_link = get_articles(tag)
@@ -19,7 +20,7 @@ def generate_readme(export_path: str):
 # Get article titles and links
 def get_articles(tag: str):
     tag = tag.lower()
-    articles = get_title_and_links(f'/home/dada/suzmemo/docs/tags/{tag}/index.xml')
+    articles = get_title_and_links(f'../docs/tags/{tag}/index.xml')
     return articles
 
 # Get xml items

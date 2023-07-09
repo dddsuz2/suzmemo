@@ -69,7 +69,8 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Poetry install Dependencies
         run: |
-          poetry install
+          python -m pip install --upgrade pip
+          pip install mdutils
       - name: update README.md
         working-directory: scripts
         run: |
