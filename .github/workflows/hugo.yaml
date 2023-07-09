@@ -75,7 +75,7 @@ jobs:
         working-directory: scripts
         run: |
           python gen_readme.py
-          mv mv README.md ./../README.md
+          mv README.md ./../README.md
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
