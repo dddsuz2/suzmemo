@@ -63,14 +63,10 @@ jobs:
       - name: Set a path
         run: |
           echo "$HOME/.local/bin" >> $GITHUB_PATH
-      - name: Setup Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
       - name: Install Poetry
         working-directory: scripts
         run: |
-          curl -sSL https://install.python-poetry.org | python - --version ${{ env.POETRY_VERSION }}
+          curl -sSL https://install.python-poetry.org | python - 
           echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Poetry install Dependencies
         working-directory: scripts
