@@ -1,8 +1,8 @@
-baseURL = 'https://dddsuz2.github.io/suzmemo'
-languageCode = 'ja'
-title = 'suzumemo'
-theme = 'xmin'
-publishDir = 'docs'
+baseURL: 'https://dddsuz2.github.io/suzmemo'
+languageCode: 'ja'
+title: 'suzumemo'
+themw: 'xmin'
+publishDir: 'docs'
 
 menu:
   main:
