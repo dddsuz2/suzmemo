@@ -1,4 +1,4 @@
-[submodule "thems/xmin"]
+[submodule "themes/xmin"]
 	path = thems/xmin
 	url = https://github.com/yihui/hugo-xmin.git
 [submodule "themes/holy"]
