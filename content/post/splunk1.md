@@ -1,8 +1,10 @@
 ---
 title: "Splunkの主要コンポーネント"
 date: 2023-07-10T22:25:40+09:00
-tags: - Splunk
-categories: -
+tags: 
+  - Splunk_Enterprise
+categories: 
+  - Splunk
 draft: false
 ---
 
