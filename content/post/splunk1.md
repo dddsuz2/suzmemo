@@ -8,11 +8,13 @@ categories:
 draft: false
 ---
 
-- Instance: Splunk が起動しているサーバーのこと
-  - StandAlone: 単独サーバーのみで、input, parse, index, search を行う構成のこと
-  - Distributed: 複数のサーバーで、input, parse, index, search を行う構成のこと
+- Instance 
+  - Splunk が起動しているサーバーのこと
+    - StandAlone: 単独サーバーのみで、input, parse, index, search を行う構成のこと
+    - Distributed: 複数のサーバーで、input, parse, index, search を行う構成のこと
 
-- Forwader: データを Indexer または別の Forwarder に対して転送するコンポーネント
+- Forwader
+  - データを Indexer または別の Forwarder に対して転送するコンポーネント
 - Indexer
   1. データをインデックス化し、raw data をイベントに変換する
   2. 検索リクエストに応じて、インデックス化されたデータを検索する
