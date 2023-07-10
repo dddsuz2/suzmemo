@@ -74,7 +74,6 @@ jobs:
       - name: update README.md
         working-directory: scripts
         run: |
-          rm ../README.md
           python gen_readme.py
           mv README.md ./../README.md
       - name: Upload artifact
