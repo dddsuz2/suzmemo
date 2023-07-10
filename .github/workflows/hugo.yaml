@@ -76,6 +76,13 @@ jobs:
         run: |
           python gen_readme.py
           mv README.md ./../README.md
+      - name: commit files
+        run: |　　
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git add README.md
+          git commit -m 'update README.md'
+          git push origin main
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
