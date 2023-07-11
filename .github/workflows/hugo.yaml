@@ -81,6 +81,7 @@ jobs:
           mv README.md ./../README.md
       - name: commit files
         run: |
+          git add -N .
           if ! git diff --exit-code --quiet
           then
             git config --global user.name "${{ github.actor }}"
