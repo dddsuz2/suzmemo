@@ -1,1 +1,96 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>【Splunk Enterprise 1】Splunkの主要コンポーネント | suzumemo</title><link rel=stylesheet href=/suzmemo/css/style.css><link rel=stylesheet href=/suzmemo/css/fonts.css></head><body><nav><ul class=menu><li><a href=/suzmemo/>Home</a></li><li><a href=/suzmemo/about/>About</a></li><li><a href=/suzmemo/tags/>Tags</a></li><li><a href=/suzmemo/index.xml>Subscribe</a></li></ul><hr></nav><div class=article-meta><h1><span class=title>【Splunk Enterprise 1】Splunkの主要コンポーネント</span></h1><h2 class=date>2023/07/10</h2></div><main><ul><li><p>Instance</p><ul><li>Splunk が起動しているサーバーのこと<ul><li>StandAlone: 単独サーバーのみで、input, parse, index, search を行う構成のこと</li><li>Distributed: 複数のサーバーで、input, parse, index, search を行う構成のこと</li></ul></li></ul></li><li><p>Forwader</p><ul><li>データを Indexer または別の Forwarder に対して転送するコンポーネント</li></ul></li><li><p>Indexer</p><ol><li>データをインデックス化し、raw data をイベントに変換する</li><li>検索リクエストに応じて、インデックス化されたデータを検索する</li></ol><ul><li>Distributed なデプロイメントの場合<ul><li>Search Head と呼ばれるコンポーネントが検索管理を行い、複数の Indexer 間で検索を調整する</li><li>この場合、個々の Indexer は「検索ピア」と呼ばれる</li></ul></li></ul></li><li><p>Index</p><ul><li>Splunk によって検索可能な形式に変換された raw data のこと</li></ul></li><li><p>Deployment-Server</p><ul><li>任意の数のインスタンスの設定をまとめて管理するインスタンス</li></ul></li><li><p>Deployment-Client</p><ul><li>Deployment-Server によってリモートで設定を管理されるインスタンス</li></ul></li></ul></main><footer></footer></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>【Splunk Enterprise 1】Splunkの主要コンポーネント | suzumemo</title>
+    <link rel="stylesheet" href="/suzmemo/css/style.css" />
+    <link rel="stylesheet" href="/suzmemo/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/suzmemo">Home</a></li>
+      
+      <li><a href="/suzmemo/about/">About</a></li>
+      
+      <li><a href="/suzmemo/tags/">Tags</a></li>
+      
+      <li><a href="/suzmemo/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">【Splunk Enterprise 1】Splunkの主要コンポーネント</span></h1>
+
+<h2 class="date">2023/07/10</h2>
+</div>
+
+<main>
+<ul>
+<li>
+<p>Instance</p>
+<ul>
+<li>Splunk が起動しているサーバーのこと
+<ul>
+<li>StandAlone: 単独サーバーのみで、input, parse, index, search を行う構成のこと</li>
+<li>Distributed: 複数のサーバーで、input, parse, index, search を行う構成のこと</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Forwader</p>
+<ul>
+<li>データを Indexer または別の Forwarder に対して転送するコンポーネント</li>
+</ul>
+</li>
+<li>
+<p>Indexer</p>
+<ol>
+<li>データをインデックス化し、raw data をイベントに変換する</li>
+<li>検索リクエストに応じて、インデックス化されたデータを検索する</li>
+</ol>
+<ul>
+<li>Distributed なデプロイメントの場合
+<ul>
+<li>Search Head と呼ばれるコンポーネントが検索管理を行い、複数の Indexer 間で検索を調整する</li>
+<li>この場合、個々の Indexer は「検索ピア」と呼ばれる</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Index</p>
+<ul>
+<li>Splunk によって検索可能な形式に変換された raw data のこと</li>
+</ul>
+</li>
+<li>
+<p>Deployment-Server</p>
+<ul>
+<li>任意の数のインスタンスの設定をまとめて管理するインスタンス</li>
+</ul>
+</li>
+<li>
+<p>Deployment-Client</p>
+<ul>
+<li>Deployment-Server によってリモートで設定を管理されるインスタンス</li>
+</ul>
+</li>
+</ul>
+
+</main>
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

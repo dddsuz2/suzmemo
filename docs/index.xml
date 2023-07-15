@@ -1,10 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>suzumemo</title><link>https://dddsuz2.github.io/suzmemo/</link><description>Recent content on suzumemo</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 15 Jul 2023 22:05:13 +0900</lastBuildDate><atom:link href="https://dddsuz2.github.io/suzmemo/index.xml" rel="self" type="application/rss+xml"/><item><title>1.基本的な姿勢</title><link>https://dddsuz2.github.io/suzmemo/post/%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/</link><pubDate>Sat, 15 Jul 2023 22:05:13 +0900</pubDate><guid>https://dddsuz2.github.io/suzmemo/post/%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/</guid><description> あらゆるものは「問いの集合体である」という考え方
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>suzumemo</title>
+    <link>https://dddsuz2.github.io/suzmemo/</link>
+    <description>Recent content on suzumemo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 15 Jul 2023 22:05:13 +0900</lastBuildDate><atom:link href="https://dddsuz2.github.io/suzmemo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.基本的な姿勢</title>
+      <link>https://dddsuz2.github.io/suzmemo/post/%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/</link>
+      <pubDate>Sat, 15 Jul 2023 22:05:13 +0900</pubDate>
+      
+      <guid>https://dddsuz2.github.io/suzmemo/post/%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/</guid>
+      <description> あらゆるものは「問いの集合体である」という考え方
 それについて、考える/考えない、答える/答えない は自分の好きなように選択する 全てのことに対して疑問を持つことが可能
 ニラジ氏が言ってた「五感を磨く」って、「全てのことに対して疑問が持てるような感覚を磨く」ってことなのかなと少し思った
-【参考】https://www.youtube.com/watch?v=18mwiVRIFBc</description></item><item><title>【Splunk Enterprise 1】Splunkの主要コンポーネント</title><link>https://dddsuz2.github.io/suzmemo/post/splunk1/</link><pubDate>Mon, 10 Jul 2023 22:25:40 +0900</pubDate><guid>https://dddsuz2.github.io/suzmemo/post/splunk1/</guid><description> Instance
+【参考】https://www.youtube.com/watch?v=18mwiVRIFBc </description>
+    </item>
+    
+    <item>
+      <title>【Splunk Enterprise 1】Splunkの主要コンポーネント</title>
+      <link>https://dddsuz2.github.io/suzmemo/post/splunk1/</link>
+      <pubDate>Mon, 10 Jul 2023 22:25:40 +0900</pubDate>
+      
+      <guid>https://dddsuz2.github.io/suzmemo/post/splunk1/</guid>
+      <description> Instance
 Splunk が起動しているサーバーのこと StandAlone: 単独サーバーのみで、input, parse, index, search を行う構成のこと Distributed: 複数のサーバーで、input, parse, index, search を行う構成のこと Forwader
 データを Indexer または別の Forwarder に対して転送するコンポーネント Indexer
 データをインデックス化し、raw data をイベントに変換する 検索リクエストに応じて、インデックス化されたデータを検索する Distributed なデプロイメントの場合 Search Head と呼ばれるコンポーネントが検索管理を行い、複数の Indexer 間で検索を調整する この場合、個々の Indexer は「検索ピア」と呼ばれる Index
 Splunk によって検索可能な形式に変換された raw data のこと Deployment-Server
 任意の数のインスタンスの設定をまとめて管理するインスタンス Deployment-Client
-Deployment-Server によってリモートで設定を管理されるインスタンス</description></item></channel></rss>
+Deployment-Server によってリモートで設定を管理されるインスタンス </description>
+    </item>
+    
+  </channel>
+</rss>
