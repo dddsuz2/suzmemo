@@ -7,8 +7,8 @@ def generate_readme(export_path: str):
     mdFile = MdUtils(file_name=export_path, title='suzmemo')
 
     tag_names = get_title_and_links('../docs/tags/index.xml')
-    sorted_tag_names = sorted(tag_names.keys())
-    for tag in sorted_tag_names.keys():
+    tag_names = dict(sorted(tag_names.keys(), key=lambda x: x[0]))
+    for tag in tag_names.keys():
         mdFile.new_header(level=1, title=tag)
         article_and_link = get_articles(tag)
         # TODO: double loop
