@@ -13,4 +13,4 @@ suzmemo
 
 # 書誌
   
- - [【書誌】質問力を鍛える本](https://dddsuz2.github.io/suzmemo/post/%E6%9B%B8%E8%AA%8C%E8%B3%AA%E5%95%8F%E5%8A%9B%E3%82%92%E9%8D%9B%E3%81%88%E3%82%8B%E6%9C%AC/)  
+ - [【書誌】質問力を鍛える本](https://dddsuz2.github.io/suzmemo/post/%E8%B3%AA%E5%95%8F%E5%8A%9B%E3%82%92%E9%8D%9B%E3%81%88%E3%82%8B%E6%9C%AC/%E6%9B%B8%E8%AA%8C%E8%B3%AA%E5%95%8F%E5%8A%9B%E3%82%92%E9%8D%9B%E3%81%88%E3%82%8B%E6%9C%AC/)  
