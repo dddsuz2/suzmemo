@@ -17,11 +17,10 @@ def generate_readme(export_path: str):
         mdFile.new_line('')
     mdFile.create_md_file()
 
-
 # Get article titles and links
 def get_articles(tag: str):
     tag = tag.lower()
-    articles = get_title_and_links(f'../docs/tags/{tag}/index.xml')
+    articles = sorted(get_title_and_links(f'../docs/tags/{tag}/index.xml'))
     return articles
 
 # Get xml items
