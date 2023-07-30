@@ -17,3 +17,7 @@ menu:
       weight: 3
     - name: Subscribe
       url: "index.xml"
+
+permalinks:
+  page:
+    /:title/
