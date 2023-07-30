@@ -20,7 +20,7 @@ def generate_readme(export_path: str):
 # Get article titles and links
 def get_articles(tag: str):
     tag = tag.lower()
-    articles = sorted(get_title_and_links(f'../docs/tags/{tag}/index.xml'))
+    articles = dict(sorted(get_title_and_links(f'../docs/tags/{tag}/index.xml', key=lambda x: x[0])))
     return articles
 
 # Get xml items
