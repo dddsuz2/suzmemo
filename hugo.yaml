@@ -19,5 +19,5 @@ menu:
       url: "index.xml"
 
 permalinks:
-  pages:
+  page:
     post: /:title/
