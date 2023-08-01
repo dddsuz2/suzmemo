@@ -7,7 +7,7 @@ seq: [""]
 draft: false
 ---
 
-![表紙](/images/EK-0932532.jpg)
+![表紙](images/EK-0932532.jpg)
 
 ```目次
 Chapter 1　openFrameworks入門
