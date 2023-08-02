@@ -2,6 +2,10 @@
 suzmemo
 =======
 
+# Splunk
+  
+ - [【Splunk Enterprise 2.0】Splunk Enterprise と Splunk Cloud の違い.md](https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.0splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84.md/)  
+
 # 人間生活
   
  - [1.基本的な姿勢](https://dddsuz2.github.io/suzmemo/1.%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/)  
