@@ -1,8 +1,8 @@
 ---
-title: "【Splunk Enterprise 2.0】Splunk Enterprise と Splunk Cloud の違い.md"
+title: "【Splunk Enterprise 2】Splunk Enterprise と Splunk Cloud の違い"
 date: 2023-08-02T22:22:13+09:00
 tags: ["Splunk"]
-seq: [""]
+seq: ["2"]
 draft: false
 ---
 
@@ -16,3 +16,8 @@ draft: false
 | HEC | 利用可能 | 利用可能(ELB on port 443 のみ) |
 | Splunk API | デフォルトで利用可能 | IP Allow List を使用すれば利用可能 |
 | Network Connection | TCP or UDP | オンプレミス上の Forwarder からのTCPのみ（UF credentials が必要）|
+
+
+[【Splunk Enterprise 2-1】License pooling とは？]({{< ref "splunk2-1.md" >}}) 
+- License Poolong って何やねんと思ったときの説明
+

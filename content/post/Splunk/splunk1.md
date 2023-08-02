@@ -1,8 +1,7 @@
 ---
 title: "【Splunk Enterprise 1】Splunkの主要コンポーネント"
 date: 2023-07-10T22:25:40+09:00
-tags: 
-  - ["Splunk"]
+tags: ["Splunk"]
 seq: ["1"]
 draft: false
 ---
