@@ -1,8 +1,7 @@
 ---
 title: "【書誌】Beyond_Interaction（改訂第3版）"
 date: 2023-08-01T22:26:43+09:00
-tags: 
-  - 書誌
+tags: ["書誌"]
 seq: [""]
 draft: false
 ---

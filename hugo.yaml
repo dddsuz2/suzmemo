@@ -7,16 +7,17 @@ publishDir: 'docs'
 menu:
   main:
     - name: Home
-      url: ""
+      url: "/"
       weight: 1
     - name: About
       url: "/about/"
       weight: 2
-    - name: Tags
-      url: "/tags/"
-      weight: 3
     - name: Subscribe
       url: "index.xml"
+
+taxonomies:
+  category: "categories"
+  tags: "tags"
 
 permalinks:
   page:
