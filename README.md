@@ -4,7 +4,9 @@ suzmemo
 
 # Splunk
   
- - [【Splunk Enterprise 2.0】Splunk Enterprise と Splunk Cloud の違い.md](https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.0splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84.md/)  
+ - [【Splunk Enterprise 1】Splunkの主要コンポーネント](https://dddsuz2.github.io/suzmemo/splunk-enterprise-1splunk%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/)  
+ - [【Splunk Enterprise 2-1】License pooling とは？](https://dddsuz2.github.io/suzmemo/splunk-enterprise-2-1license-pooling-%E3%81%A8%E3%81%AF/)  
+ - [【Splunk Enterprise 2】Splunk Enterprise と Splunk Cloud の違い](https://dddsuz2.github.io/suzmemo/splunk-enterprise-2splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84/)  
 
 # 人間生活
   
