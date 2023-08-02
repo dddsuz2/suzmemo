@@ -2,10 +2,6 @@
 suzmemo
 =======
 
-# Splunk
-  
- - [【Splunk Enterprise 1】Splunkの主要コンポーネント](https://dddsuz2.github.io/suzmemo/splunk-enterprise-1splunk%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/)  
-
 # 人間生活
   
  - [1.基本的な姿勢](https://dddsuz2.github.io/suzmemo/1.%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/)  
