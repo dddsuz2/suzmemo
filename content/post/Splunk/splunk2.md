@@ -1,5 +1,5 @@
 ---
-title: "【Splunk Enterprise 2】Splunk Enterprise と Splunk Cloud の違い"
+title: "【Splunk Enterprise 2.0】Splunk Enterprise と Splunk Cloud の違い"
 date: 2023-08-02T22:22:13+09:00
 tags: ["Splunk"]
 seq: ["2"]
