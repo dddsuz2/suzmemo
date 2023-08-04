@@ -12,6 +12,7 @@ suzmemo
   
  - [1.基本的な姿勢](https://dddsuz2.github.io/suzmemo/1.%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/)  
  - [2.人の目を見て話す](https://dddsuz2.github.io/suzmemo/2.%E4%BA%BA%E3%81%AE%E7%9B%AE%E3%82%92%E8%A6%8B%E3%81%A6%E8%A9%B1%E3%81%99/)  
+ - [基本的に電子書籍を買う](https://dddsuz2.github.io/suzmemo/%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AB%E9%9B%BB%E5%AD%90%E6%9B%B8%E7%B1%8D%E3%82%92%E8%B2%B7%E3%81%86/)  
 
 # 書誌
   
