@@ -1,11 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Splunk on suzumemo</title><link>https://dddsuz2.github.io/suzmemo/tags/splunk/</link><description>Recent content in Splunk on suzumemo</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 02 Aug 2023 22:41:20 +0900</lastBuildDate><atom:link href="https://dddsuz2.github.io/suzmemo/tags/splunk/index.xml" rel="self" type="application/rss+xml"/><item><title>【Splunk Enterprise 2.1】License pooling とは？</title><link>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.1license-pooling-%E3%81%A8%E3%81%AF/</link><pubDate>Wed, 02 Aug 2023 22:41:20 +0900</pubDate><guid>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.1license-pooling-%E3%81%A8%E3%81%AF/</guid><description>License Stack
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Splunk on suzumemo</title>
+    <link>https://dddsuz2.github.io/suzmemo/tags/splunk/</link>
+    <description>Recent content in Splunk on suzumemo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 02 Aug 2023 22:41:20 +0900</lastBuildDate><atom:link href="https://dddsuz2.github.io/suzmemo/tags/splunk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Splunk Enterprise 2.1】License pooling とは？</title>
+      <link>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.1license-pooling-%E3%81%A8%E3%81%AF/</link>
+      <pubDate>Wed, 02 Aug 2023 22:41:20 +0900</pubDate>
+      
+      <guid>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.1license-pooling-%E3%81%A8%E3%81%AF/</guid>
+      <description>License Stack
 個々の License Volume が集約されたもの Enterprise と Enterprise Sales Trial ライセンスのみスタック可能
 License Master (LM) Liscense Stack を持ち、Liscense Peer (Liscense Slave) 以下の各インスタンスにライセンスを分配する Liscense Peer 間でライセンスを共有することができる
-License Pool License stack から割り当てられるライセンスの量</description></item><item><title>【Splunk Enterprise 2.0】Splunk Enterprise と Splunk Cloud の違い</title><link>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.0splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84/</link><pubDate>Wed, 02 Aug 2023 22:22:13 +0900</pubDate><guid>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.0splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84/</guid><description> Splunk Enterprise Splunk Cloud CLI 利用可能 利用不可　Splunk Apps 利用者が自由に決められる Splunkによって承認されたアプリのみ Direct TCP/UDP network input 利用可能 利用不可 Scripted Alerts 利用可能 承認されたアプリのみ利用可能 License pooling 利用可能 利用不可 HEC 利用可能 利用可能(ELB on port 443 のみ) Splunk API デフォルトで利用可能 IP Allow List を使用すれば利用可能 Network Connection TCP or UDP オンプレミス上の Forwarder からのTCPのみ（UF credentials が必要） 【Splunk Enterprise 2-1】License pooling とは？
-License Poolong って何やねんと思ったときの説明</description></item><item><title>【Splunk Enterprise 1】Splunkの主要コンポーネント</title><link>https://dddsuz2.github.io/suzmemo/splunk-enterprise-1splunk%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link><pubDate>Mon, 10 Jul 2023 22:25:40 +0900</pubDate><guid>https://dddsuz2.github.io/suzmemo/splunk-enterprise-1splunk%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid><description> Instance
+License Pool License stack から割り当てられるライセンスの量 </description>
+    </item>
+    
+    <item>
+      <title>【Splunk Enterprise 2.0】Splunk Enterprise と Splunk Cloud の違い</title>
+      <link>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.0splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84/</link>
+      <pubDate>Wed, 02 Aug 2023 22:22:13 +0900</pubDate>
+      
+      <guid>https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.0splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84/</guid>
+      <description> Splunk Enterprise Splunk Cloud CLI 利用可能 利用不可　Splunk Apps 利用者が自由に決められる Splunkによって承認されたアプリのみ Direct TCP/UDP network input 利用可能 利用不可 Scripted Alerts 利用可能 承認されたアプリのみ利用可能 License pooling 利用可能 利用不可 HEC 利用可能 利用可能(ELB on port 443 のみ) Splunk API デフォルトで利用可能 IP Allow List を使用すれば利用可能 Network Connection TCP or UDP オンプレミス上の Forwarder からのTCPのみ（UF credentials が必要） 【Splunk Enterprise 2-1】License pooling とは？
+License Poolong って何やねんと思ったときの説明 </description>
+    </item>
+    
+    <item>
+      <title>【Splunk Enterprise 1】Splunkの主要コンポーネント</title>
+      <link>https://dddsuz2.github.io/suzmemo/splunk-enterprise-1splunk%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
+      <pubDate>Mon, 10 Jul 2023 22:25:40 +0900</pubDate>
+      
+      <guid>https://dddsuz2.github.io/suzmemo/splunk-enterprise-1splunk%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
+      <description> Instance
 Splunk が起動しているサーバーのこと StandAlone: 単独サーバーのみで、input, parse, index, search を行う構成のこと Distributed: 複数のサーバーで、input, parse, index, search を行う構成のこと Forwader
 データを Indexer または別の Forwarder に対して転送するコンポーネント Indexer
 データをインデックス化し、raw data をイベントに変換する 検索リクエストに応じて、インデックス化されたデータを検索する Distributed なデプロイメントの場合 Search Head と呼ばれるコンポーネントが検索管理を行い、複数の Indexer 間で検索を調整する この場合、個々の Indexer は「検索ピア」と呼ばれる Index
 Splunk によって検索可能な形式に変換された raw data のこと Deployment-Server
 任意の数のインスタンスの設定をまとめて管理するインスタンス Deployment-Client
-Deployment-Server によってリモートで設定を管理されるインスタンス</description></item></channel></rss>
+Deployment-Server によってリモートで設定を管理されるインスタンス </description>
+    </item>
+    
+  </channel>
+</rss>
