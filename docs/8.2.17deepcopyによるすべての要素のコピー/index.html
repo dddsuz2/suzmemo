@@ -1,0 +1,96 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【8.2.17】deepcopyによるすべての要素のコピー - suzmemo</title><meta name=description content="copy()関数は、リストの要素がすべてイミュータブルである場合にうまく機能する ミュータブルな値（リスト、集合、辞書）の場合は参照である オリジナルかコピーのどちらかに変更を加えると、両方に変更が反映される >>> a = [1, 2, [8, 9]] >>> b = a.copy() >>> c = list(a) >>> d = a[:] >>> a [1, 2, [8, 9]] >>> b [1, 2, [8, 9]] >>> c [1, 2, [8, 9]] >>> d [1, 2, [8, 9]] >>> a[2][1] = 10 >>> a [1, 2, [8, 10]] >>> b [1, 2, [8, 10]] >>> c [1, 2, [8, 10]] >>> d [1, 2, [8, 10]] a[2]の値はリストなので、その要素は書き換えられる b, c, dを作るために使ったリストのコピーは全て浅いコピー（shallow copy） これを解決するには、deepcopy()関数を使う >>> import copy >>> a = [1, 2, [8, 9]] >>> b = copy."><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【8.2.17】deepcopyによるすべての要素のコピー</div><div class="mt:16 f:fade-60"><time>Aug 5, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><ul><li><code>copy()</code>関数は、リストの要素がすべてイミュータブルである場合にうまく機能する<ul><li>ミュータブルな値（リスト、集合、辞書）の場合は参照である<ul><li>オリジナルかコピーのどちらかに変更を加えると、両方に変更が反映される</li></ul></li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> b <span style=color:#f92672>=</span> a<span style=color:#f92672>.</span>copy()
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> c <span style=color:#f92672>=</span> list(a)
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> d <span style=color:#f92672>=</span> a[:]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> b
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> c
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> d
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a[<span style=color:#ae81ff>2</span>][<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>10</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> b
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>10</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> c
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>10</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> d
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>10</span>]]
+</span></span></code></pre></div><ul><li>a[2]の値はリストなので、その要素は書き換えられる<ul><li><code>b, c, d</code>を作るために使ったリストのコピーは全て浅いコピー（shallow copy）</li></ul></li><li>これを解決するには、<code>deepcopy()</code>関数を使う</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>import</span> copy
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> b <span style=color:#f92672>=</span> copy<span style=color:#f92672>.</span>deepcopy(a)
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> b
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a[<span style=color:#ae81ff>2</span>][<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> a
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>10</span>]]
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> b
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, [<span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>]]
+</span></span></code></pre></div></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>

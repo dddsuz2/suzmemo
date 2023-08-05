@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【1.0】codebuildにおけるbuildspec - suzumemo</title><meta name=description content="codebuild では、buildspec というファイルを使用して、ビルド仕様を決定することができる デフォルト名は buildspec.yml ソースディレクトリのルートに配置する必要がある buildspec.yml のファイル名と場所の変更 同じリポジトリの異なるビルドに、buildspec_debug.ymlや、buildspec_release.yml などの異なるファイルを使用する ルートディレクトリ以外の場所や、S3バケットに保存することができる ビルドプロジェクトと同じリージョンにS3バケットが存在する必要がある arn を使ってファイルを指定する ビルドプロジェクトには、1つの buildspec しか存在できない buildspec ファイルの名前、場所、またはその両方をオーバーライドする場合 AWS CLI の create-project または、update-project コマンドを使用する buildspec の値を、組み込みの環境変数の CODEBUILD_SRC_DIR の値を基準にした代替パスに設定する AWS CLI の start-build コマンドから、buildspecOverride の値を、CODEBUILD_SRC_DIR の値を基準にした代替パスに設定する AWS CloudFormation テンプレートで、BuildSpec タイプのリソース Source の AWS::CodeBuild::Project プロパティを、組み込みの環境変数 CODEBUILD_SRC_DIR の値を基準にした代替 buildspec ファイルのパスに設定します。"><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【1.0】codebuildにおけるbuildspec - suzmemo</title><meta name=description content="codebuild では、buildspec というファイルを使用して、ビルド仕様を決定することができる デフォルト名は buildspec.yml ソースディレクトリのルートに配置する必要がある buildspec.yml のファイル名と場所の変更 同じリポジトリの異なるビルドに、buildspec_debug.ymlや、buildspec_release.yml などの異なるファイルを使用する ルートディレクトリ以外の場所や、S3バケットに保存することができる ビルドプロジェクトと同じリージョンにS3バケットが存在する必要がある arn を使ってファイルを指定する ビルドプロジェクトには、1つの buildspec しか存在できない buildspec ファイルの名前、場所、またはその両方をオーバーライドする場合 AWS CLI の create-project または、update-project コマンドを使用する buildspec の値を、組み込みの環境変数の CODEBUILD_SRC_DIR の値を基準にした代替パスに設定する AWS CLI の start-build コマンドから、buildspecOverride の値を、CODEBUILD_SRC_DIR の値を基準にした代替パスに設定する AWS CloudFormation テンプレートで、BuildSpec タイプのリソース Source の AWS::CodeBuild::Project プロパティを、組み込みの環境変数 CODEBUILD_SRC_DIR の値を基準にした代替 buildspec ファイルのパスに設定します。"><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
 <script src=https://unpkg.com/@master/styles@1.13.0></script>
 <script src=https://unpkg.com/master-styles-group></script>
 <script src=https://unpkg.com/themes.js></script>
@@ -8,7 +8,7 @@ max-w:1200
 mx:auto
 px:32
 d:flex
-align-items:center"><div><a href=/ class="mr-3 font:extralight">suzumemo</a></div><div class=ml:auto><a class="font:semibold
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
 font:fade
 font:fade-10:hover
 font:fade-30.active

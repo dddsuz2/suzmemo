@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【1.0】最も簡単なパターンのcodebuildスクリプト - suzumemo</title><meta name=description content="version: 0.2 phases: build: commands: - ./terraform/codebuild/build.sh set -eux terraform version cd &#34;terraform/env/${ENV}&#34; || exit if [&#34;{$COMMNAD}&#34; = &#34;apply&#34;]; then terraform apply -auto-approve elif [&#34;{$COMMAND}&#34; = &#34;destroy&#34;]; then terraform destroy -auto-approve else terraform &#34;${COMMAND}&#34; fi cd - || exit CI/CD パイプラインのようなスクリプトの実行が自動化されている環境では、auto-approve をつけて、対話的なプロンプトが起動しないようにする || exit をつけることで、前のコマンドが失敗した時に強制的にスクリプトを終了する set -eux -e（errexit）: このオプションが設定されていると、シェルスクリプトはエラーが発生した箇所で停止します。通常、シェルスクリプトはエラーが発生しても全てのコマンドを実行し終えるまで処理を続けます。しかし、set -eを設定すると、途中でエラーが起きた場合にはその時点でスクリプトが停止します。
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【1.0】最も簡単なパターンのcodebuildスクリプト - suzmemo</title><meta name=description content="version: 0.2 phases: build: commands: - ./terraform/codebuild/build.sh set -eux terraform version cd &#34;terraform/env/${ENV}&#34; || exit if [&#34;{$COMMNAD}&#34; = &#34;apply&#34;]; then terraform apply -auto-approve elif [&#34;{$COMMAND}&#34; = &#34;destroy&#34;]; then terraform destroy -auto-approve else terraform &#34;${COMMAND}&#34; fi cd - || exit CI/CD パイプラインのようなスクリプトの実行が自動化されている環境では、auto-approve をつけて、対話的なプロンプトが起動しないようにする || exit をつけることで、前のコマンドが失敗した時に強制的にスクリプトを終了する set -eux -e（errexit）: このオプションが設定されていると、シェルスクリプトはエラーが発生した箇所で停止します。通常、シェルスクリプトはエラーが発生しても全てのコマンドを実行し終えるまで処理を続けます。しかし、set -eを設定すると、途中でエラーが起きた場合にはその時点でスクリプトが停止します。
 -u（nounset）: このオプションが設定されていると、未定義の変数を参照しようとするとエラーが発生します。これは、変数の名前を間違えたり、変数が予期せず未設定のままになっている場合などのミスを防ぐのに役立ちます。
 -x（xtrace）: このオプションが設定されていると、シェルスクリプトは実行するコマンドをすべて表示します。これはデバッグに便利で、どのコマンドがどのように実行されているかを明確にするのに役立ちます。
 cd - cd -というコマンドはシェルで前回の作業ディレクトリに戻る役割を果たします。"><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
@@ -11,7 +11,7 @@ max-w:1200
 mx:auto
 px:32
 d:flex
-align-items:center"><div><a href=/ class="mr-3 font:extralight">suzumemo</a></div><div class=ml:auto><a class="font:semibold
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
 font:fade
 font:fade-10:hover
 font:fade-30.active
