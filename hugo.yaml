@@ -1,6 +1,6 @@
 baseURL: 'https://dddsuz2.github.io/suzmemo'
 languageCode: 'ja'
-title: 'suzumemo'
+title: 'suzmemo'
 theme: 'holy'
 publishDir: 'docs'
 

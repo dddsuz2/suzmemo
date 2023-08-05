@@ -6,12 +6,12 @@ seq: ["2-1"]
 draft: false
 ---
 
-License Stack
+- License Stack
   - 個々の License Volume が集約されたもの
   - Enterprise と Enterprise Sales Trial ライセンスのみスタック可能  
-License Master (LM) 
+- License Master (LM) 
   - Liscense Stack を持ち、Liscense Peer (Liscense Slave) 以下の各インスタンスにライセンスを分配する
   - Liscense Peer 間でライセンスを共有することができる  
-License Pool
+- License Pool
   - License stack から割り当てられるライセンスの量
 
