@@ -1,0 +1,102 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【12.9】ダックタイピング - suzmemo</title><meta name=description content="Pythonはポリモーフィズムの緩やかな実装を持つ
+クラスの種類にかかわらず、メソッドの名前と引数に基づき、異なるオブジェクトに対して同じ操作を適用する 同じ__init__()メソッドを共有する3種類のQuoteクラスを定義してみる
+who()は、保存されているperson文字列を単純に返す says()は、保存されているwordsにクラスごとに異なる記号を付けて返す >>> class Quote: ... def __init__(self, person, words): ... self.person = person ... self.words = words ... def who(self): ... return self.person ... def says(self): ... return self.words + ',' >>> class QuestionQuote(Quote): ... def says(self): ... return self.words + '?' ... >>> class ExclamationQuote(Quote): ... def says(self): ... return self.words + '!' ... __init__()メソッドのオーバライドをQuestionQuoteとExclamationQuoteでは行っていない インスタンス変数のpersonとwordのため、自動的に親クラスの__init__()を呼び出す >>> hunter = Quote('Elmer Fudd', &#34;I'm hunting wabbits&#34;) >>> print(hunter."><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【12.9】ダックタイピング</div><div class="mt:16 f:fade-60"><time>Aug 7, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><ul><li><p>Pythonはポリモーフィズムの緩やかな実装を持つ</p><ul><li>クラスの種類にかかわらず、メソッドの名前と引数に基づき、異なるオブジェクトに対して同じ操作を適用する</li></ul></li><li><p>同じ<code>__init__()</code>メソッドを共有する3種類の<code>Quote</code>クラスを定義してみる</p><ul><li><code>who()</code>は、保存されているperson文字列を単純に返す</li><li><code>says()</code>は、保存されているwordsにクラスごとに異なる記号を付けて返す</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Quote</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     <span style=color:#66d9ef>def</span> __init__(self, person, words):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>             self<span style=color:#f92672>.</span>person <span style=color:#f92672>=</span> person
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>             self<span style=color:#f92672>.</span>words <span style=color:#f92672>=</span> words
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>who</span>(self):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>             <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>person
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>says</span>(self):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>             <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>words <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;,&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>QuestionQuote</span>(Quote):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>says</span>(self):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>             <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>words <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;?&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ExclamationQuote</span>(Quote):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>says</span>(self):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>             <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>words <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;!&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span></code></pre></div><ul><li><code>__init__()</code>メソッドのオーバライドを<code>QuestionQuote</code>と<code>ExclamationQuote</code>では行っていない<ul><li>インスタンス変数の<code>person</code>と<code>word</code>のため、自動的に親クラスの<code>__init__()</code>を呼び出す</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> hunter <span style=color:#f92672>=</span> Quote(<span style=color:#e6db74>&#39;Elmer Fudd&#39;</span>, <span style=color:#e6db74>&#34;I&#39;m hunting wabbits&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> print(hunter<span style=color:#f92672>.</span>who(), <span style=color:#e6db74>&#39;says:&#39;</span>, hunter<span style=color:#f92672>.</span>says())
+</span></span><span style=display:flex><span>Elmer Fudd says: I<span style=color:#e6db74>&#39;m hunting wabbits,</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> hunted1 <span style=color:#f92672>=</span> QuestionQuote(<span style=color:#e6db74>&#39;Bugs Bunny&#39;</span>, <span style=color:#e6db74>&#34;What&#39;s up, doc&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> print(hunted1<span style=color:#f92672>.</span>who(), <span style=color:#e6db74>&#39;says:&#39;</span>, hunted1<span style=color:#f92672>.</span>says())
+</span></span><span style=display:flex><span>Bugs Bunny says: What<span style=color:#e6db74>&#39;s up, doc?</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> hunted2 <span style=color:#f92672>=</span> ExclamationQuote(<span style=color:#e6db74>&#39;Daffy Duck&#39;</span>, <span style=color:#e6db74>&#34;It&#39;s rabbit sesson&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> print(hunted2<span style=color:#f92672>.</span>who(), <span style=color:#e6db74>&#39;says:&#39;</span>, hunted2<span style=color:#f92672>.</span>says())
+</span></span><span style=display:flex><span>Daffy Duck says: It<span style=color:#e6db74>&#39;s rabbit sesson!</span>
+</span></span></code></pre></div><ul><li>Pythonでは、<code>who()</code>, <code>says()</code>メソッドを持ちさえすれば、どのようなオブジェクトでも（継承を利用しなくても）これらのメソッドが実行できるようになっている</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> brook <span style=color:#f92672>=</span> BabblingBrook()
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>who_says</span>(obj):
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(obj<span style=color:#f92672>.</span>who(), <span style=color:#e6db74>&#39;says&#39;</span>, obj<span style=color:#f92672>.</span>says())
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> who_says(hunter)
+</span></span><span style=display:flex><span>Elmer Fudd says I<span style=color:#e6db74>&#39;m hunting wabbits,</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> who_says(hunted1)
+</span></span><span style=display:flex><span>Bugs Bunny says What<span style=color:#e6db74>&#39;s up, doc?</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> who_says(hunted2)
+</span></span><span style=display:flex><span>Daffy Duck says It<span style=color:#e6db74>&#39;s rabbit sesson!</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> who_says(brook)
+</span></span><span style=display:flex><span>Brook says Babble
+</span></span></code></pre></div><ul><li>このような動作を、ダックタイピングと呼ぶ</li></ul></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>
