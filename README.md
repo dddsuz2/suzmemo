@@ -8,6 +8,10 @@ suzmemo
  - [【Splunk Enterprise 2.0】Splunk Enterprise と Splunk Cloud の違い](https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.0splunk-enterprise-%E3%81%A8-splunk-cloud-%E3%81%AE%E9%81%95%E3%81%84/)  
  - [【Splunk Enterprise 2.1】License pooling とは？](https://dddsuz2.github.io/suzmemo/splunk-enterprise-2.1license-pooling-%E3%81%A8%E3%81%AF/)  
 
+# Vim
+  
+ - [プラグインの導入](https://dddsuz2.github.io/suzmemo/%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E5%B0%8E%E5%85%A5/)  
+
 # 人間生活
   
  - [1.基本的な姿勢](https://dddsuz2.github.io/suzmemo/1.%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/)  
