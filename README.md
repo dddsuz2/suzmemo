@@ -10,7 +10,7 @@ suzmemo
 
 # Vim
   
- - [プラグインの導入](https://dddsuz2.github.io/suzmemo/%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E5%B0%8E%E5%85%A5/)  
+ - [【1】プラグインの導入](https://dddsuz2.github.io/suzmemo/1%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E5%B0%8E%E5%85%A5/)  
 
 # 人間生活
   
