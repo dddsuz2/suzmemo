@@ -18,3 +18,10 @@ openFrameworksという言葉を直訳すると？
     - サウンドの録音と再生
     - 動画のキャプチャと再生
     - マウスやキーボードによるインタラクション　など　
+
+ - openFrameworksは色々なライブラリの集合体
+   - グラフィック：OpenGL
+   - オーディオ：RtAudio
+   - フォント：FreeType
+   - 画像の入出力：FreeImage
+   - 動画の再生やキャプチャ：GStreamer
