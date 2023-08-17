@@ -12,6 +12,10 @@ suzmemo
   
  - [【1】プラグインの導入](https://dddsuz2.github.io/suzmemo/1%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E5%B0%8E%E5%85%A5/)  
 
+# プログラミング
+  
+ - [【1】コードがわからない時の対処法](https://dddsuz2.github.io/suzmemo/1%E3%82%B3%E3%83%BC%E3%83%89%E3%81%8C%E3%82%8F%E3%81%8B%E3%82%89%E3%81%AA%E3%81%84%E6%99%82%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/)  
+
 # 人間生活
   
  - [1.基本的な姿勢](https://dddsuz2.github.io/suzmemo/1.%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E5%A7%BF%E5%8B%A2/)  
