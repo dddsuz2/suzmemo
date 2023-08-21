@@ -41,7 +41,7 @@ draft: false
 | vibration    | n        |                 |
 | previous     | adj      |                 |
 | treatment    | n        |                 |
-| scissors     | n        | 複数形で使う          |
+| scissors     | n        | 複数形で使う     |
 | fireplace    | n        |                 |
 | folk         | n        |                 |
 | involve      | v        |                 |
