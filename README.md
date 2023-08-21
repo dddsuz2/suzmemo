@@ -32,6 +32,10 @@ suzmemo
  - [【書誌】詳解システムパフォーマンス](https://dddsuz2.github.io/suzmemo/%E6%9B%B8%E8%AA%8C%E8%A9%B3%E8%A7%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9/)  
  - [【書誌】質問力を鍛える本](https://dddsuz2.github.io/suzmemo/%E6%9B%B8%E8%AA%8C%E8%B3%AA%E5%95%8F%E5%8A%9B%E3%82%92%E9%8D%9B%E3%81%88%E3%82%8B%E6%9C%AC/)  
 
+# 英単語
+  
+ - [TOEFL英単語](https://dddsuz2.github.io/suzmemo/toefl%E8%8B%B1%E5%8D%98%E8%AA%9E/)  
+
 # 雑記
   
  - [基本的に電子書籍を買う](https://dddsuz2.github.io/suzmemo/%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AB%E9%9B%BB%E5%AD%90%E6%9B%B8%E7%B1%8D%E3%82%92%E8%B2%B7%E3%81%86/)  
