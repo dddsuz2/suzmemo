@@ -1,0 +1,122 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【11.17】名前空間とスコープ - suzmemo</title><meta name=description content="Pythonプログラムは様々な名前空間を持つ 名前は名前空間の中で決まった意味を持つ 各関数は、それぞれ専用の名前空間を定義する ほかの名前空間にアクセスすることもできる プログラムのメイン部分は、グローバル名前空間を定義する この空間の変数は、グローバル変数と言われる グローバル変数は、関数内から参照できる >>> animal = 'fruitbat' >>> def print_global(): ... print('inside print_global:', animal) ... >>> print('at the top level:', animal) at the top level: fruitbat >>> print_global() inside print_global: fruitbat 関数でグローバル変数を取得したうえで、さらに書き換えようとするとエラーが起きる >>> def change_and_print_global(): ... print('inside change_and_print_global:', animal) ... animal = 'wombat' ... print('after the change:', animal) ... >>> change_and_print_global() Traceback (most recent call last): File &#34;<stdin>&#34;, line 1, in <module> File &#34;<stdin>&#34;, line 2, in change_and_print_global UnboundLocalError: local variable 'animal' referenced before assignment 関数内でだけで有効な別の変数を書き換えようとしたと解釈されている 代入していない変数を先に参照したとしてエラーが出ている 参照しないで値をセットすると問題は起きない >>> animal = 'fruitbat' >>> def change_local(): ."><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【11.17】名前空間とスコープ</div><div class="mt:16 f:fade-60"><time>Aug 6, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><ul><li>Pythonプログラムは様々な名前空間を持つ<ul><li>名前は名前空間の中で決まった意味を持つ</li><li>各関数は、それぞれ専用の名前空間を定義する</li><li>ほかの名前空間にアクセスすることもできる</li></ul></li><li>プログラムのメイン部分は、グローバル名前空間を定義する<ul><li>この空間の変数は、グローバル変数と言われる<ul><li>グローバル変数は、関数内から参照できる</li></ul></li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;fruitbat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>print_global</span>():
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(<span style=color:#e6db74>&#39;inside print_global:&#39;</span>, animal)
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> print(<span style=color:#e6db74>&#39;at the top level:&#39;</span>, animal)
+</span></span><span style=display:flex><span>at the top level: fruitbat
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> print_global()
+</span></span><span style=display:flex><span>inside print_global: fruitbat
+</span></span></code></pre></div><ul><li>関数でグローバル変数を取得したうえで、さらに書き換えようとするとエラーが起きる</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>change_and_print_global</span>():
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(<span style=color:#e6db74>&#39;inside change_and_print_global:&#39;</span>, animal)
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;wombat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(<span style=color:#e6db74>&#39;after the change:&#39;</span>, animal)
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> change_and_print_global()
+</span></span><span style=display:flex><span>Traceback (most recent call last):
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;&lt;stdin&gt;&#34;</span>, line <span style=color:#ae81ff>1</span>, <span style=color:#f92672>in</span> <span style=color:#f92672>&lt;</span>module<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;&lt;stdin&gt;&#34;</span>, line <span style=color:#ae81ff>2</span>, <span style=color:#f92672>in</span> change_and_print_global
+</span></span><span style=display:flex><span><span style=color:#a6e22e>UnboundLocalError</span>: local variable <span style=color:#e6db74>&#39;animal&#39;</span> referenced before assignment
+</span></span></code></pre></div><ul><li>関数内でだけで有効な別の変数を書き換えようとしたと解釈されている<ul><li>代入していない変数を先に参照したとしてエラーが出ている</li><li>参照しないで値をセットすると問題は起きない</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;fruitbat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>change_local</span>():
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;wombat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(<span style=color:#e6db74>&#39;inside change_local:&#39;</span>, animal, id(animal))
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> change_local()
+</span></span><span style=display:flex><span>inside change_local: wombat <span style=color:#ae81ff>140647551084464</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;fruitbat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> id(animal)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>140647551082992</span>
+</span></span></code></pre></div><ul><li>関数内から、ローカル変数ではなく、グローバル変数の方にアクセスするには、<code>global</code>キーワードを使ってそのことを明示する</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;fruitbat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>change_and_print_global</span>():
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     <span style=color:#66d9ef>global</span> animal
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;wombat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(<span style=color:#e6db74>&#39;inside change_and_print_global:&#39;</span>, animal)
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;fruitbat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> change_and_print_global()
+</span></span><span style=display:flex><span>inside change_and_print_global: wombat
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;wombat&#39;</span>
+</span></span></code></pre></div><ul><li>名前空間の内容にアクセスするには、次の2つの関数がある<ul><li><code>locals()</code></li><li><code>globals()</code></li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;fruitbat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>change_local</span>():
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;wombat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(<span style=color:#e6db74>&#39;locals</span>
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;&lt;stdin&gt;&#34;</span>, line <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;locals</span>
+</span></span><span style=display:flex><span>                 <span style=color:#f92672>^</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>SyntaxError</span>: EOL <span style=color:#66d9ef>while</span> scanning string literal
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>change_local</span>():
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     animal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;wombat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>     print(<span style=color:#e6db74>&#39;locals:&#39;</span>, locals())
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> animal
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;fruitbat&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> change_local()
+</span></span><span style=display:flex><span>locals: {<span style=color:#e6db74>&#39;animal&#39;</span>: <span style=color:#e6db74>&#39;wombat&#39;</span>}
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> print(<span style=color:#e6db74>&#39;globals:&#39;</span>, globals())
+</span></span><span style=display:flex><span>globals: {<span style=color:#e6db74>&#39;__name__&#39;</span>: <span style=color:#e6db74>&#39;__main__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>: <span style=color:#66d9ef>None</span>, <span style=color:#e6db74>&#39;__package__&#39;</span>: <span style=color:#66d9ef>None</span>, <span style=color:#e6db74>&#39;__loader__&#39;</span>: <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>class</span> <span style=color:#960050;background-color:#1e0010>&#39;</span><span style=color:#a6e22e>_frozen_importlib</span><span style=color:#f92672>.</span>BuiltinImporter<span style=color:#e6db74>&#39;&gt;, &#39;</span>__spec__<span style=color:#e6db74>&#39;: None, &#39;</span>__annotations__<span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, &#39;</span>__builtins__<span style=color:#e6db74>&#39;: &lt;module &#39;</span>builtins<span style=color:#e6db74>&#39; (built-in)&gt;, &#39;</span>another_empty_list<span style=color:#e6db74>&#39;: [], &#39;</span>talk_like_a_pirate_day<span style=color:#e6db74>&#39;: &#39;</span><span style=color:#ae81ff>9</span><span style=color:#f92672>/</span><span style=color:#ae81ff>19</span><span style=color:#f92672>/</span><span style=color:#ae81ff>2019</span><span style=color:#e6db74>&#39;, &#39;</span>maxes<span style=color:#e6db74>&#39;: [&#39;</span>Groucho<span style=color:#e6db74>&#39;, &#39;</span>Gummo<span style=color:#e6db74>&#39;, &#39;</span>Harpo<span style=color:#e6db74>&#39;, &#39;</span>Zeppo<span style=color:#e6db74>&#39;, &#39;</span>Gummo<span style=color:#e6db74>&#39;, &#39;</span>Karl<span style=color:#e6db74>&#39;, &#39;</span>Gummo<span style=color:#e6db74>&#39;, &#39;</span>Karl<span style=color:#e6db74>&#39;], &#39;</span>others<span style=color:#e6db74>&#39;: {&#39;</span>Marx<span style=color:#e6db74>&#39;: &#39;</span>Groucho<span style=color:#e6db74>&#39;, &#39;</span>Howard<span style=color:#e6db74>&#39;: &#39;</span>Moe<span style=color:#e6db74>&#39;}, &#39;</span>numbers<span style=color:#e6db74>&#39;: [1, &#39;</span>w<span style=color:#e6db74>&#39;, &#39;</span>a<span style=color:#e6db74>&#39;, &#39;</span>t<span style=color:#e6db74>&#39;, &#39;</span><span style=color:#960050;background-color:#1e0010>?</span><span style=color:#e6db74>&#39;, 4], &#39;</span>work_quotes<span style=color:#e6db74>&#39;: [], &#39;</span>a<span style=color:#e6db74>&#39;: &lt;function knights2.&lt;locals&gt;.inner2 at 0x7feb0f51cd30&gt;, &#39;</span><span style=color:#e6db74>b</span><span style=color:#e6db74>&#39;: &lt;function knights2.&lt;locals&gt;.inner2 at 0x7feb0f51cdc0&gt;, &#39;</span>c<span style=color:#e6db74>&#39;: [1, 2, [8, 10]], &#39;</span>d<span style=color:#e6db74>&#39;: [1, 2, [8, 10]], &#39;</span>copy<span style=color:#e6db74>&#39;: &lt;module &#39;</span>copy<span style=color:#e6db74>&#39; from &#39;</span><span style=color:#f92672>/</span>home<span style=color:#f92672>/</span>linuxbrew<span style=color:#f92672>/.</span>linuxbrew<span style=color:#f92672>/</span>Cellar<span style=color:#f92672>/</span>python<span style=color:#f92672>@</span><span style=color:#ae81ff>3.9</span><span style=color:#f92672>/</span><span style=color:#ae81ff>3.9.12</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.9</span><span style=color:#f92672>/</span>copy<span style=color:#f92672>.</span>py<span style=color:#e6db74>&#39;&gt;, &#39;</span>english<span style=color:#e6db74>&#39;: (&#39;</span>monday<span style=color:#e6db74>&#39;, &#39;</span>tuesday<span style=color:#e6db74>&#39;, &#39;</span>wednesday<span style=color:#e6db74>&#39;), &#39;</span>french<span style=color:#e6db74>&#39;: (&#39;</span>lundi<span style=color:#e6db74>&#39;, &#39;</span>mardi<span style=color:#e6db74>&#39;, &#39;</span>mercredi<span style=color:#e6db74>&#39;), &#39;</span>number_list<span style=color:#e6db74>&#39;: [1, 3, 5], &#39;</span>rows<span style=color:#e6db74>&#39;: range(1, 4), &#39;</span>cols<span style=color:#e6db74>&#39;: range(1, 3), &#39;</span>cells<span style=color:#e6db74>&#39;: [(1, 1), (1, 2), (2, 1), (2, 2), (3, 1), (3, 2)], &#39;</span>cell<span style=color:#e6db74>&#39;: (3, 2), &#39;</span>empty_dict<span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, &#39;</span>bierce<span style=color:#e6db74>&#39;: {&#39;</span>day<span style=color:#e6db74>&#39;: &#39;</span>A period of twenty<span style=color:#f92672>-</span>four hours, mostly, misspent<span style=color:#e6db74>&#39;, &#39;</span>positive<span style=color:#e6db74>&#39;: &#34;Mistaken at the top of one&#39;</span>s voice<span style=color:#e6db74>&#34;, &#39;misfortune&#39;: &#39;The kind of fortune that never misses&#39;}, &#39;acme_customer&#39;: {&#39;first&#39;: &#39;Wile&#39;, &#39;middle&#39;: &#39;E&#39;, &#39;last&#39;: &#39;Coyote&#39;}, &#39;lol&#39;: [[&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;, &#39;d&#39;], [&#39;e&#39;, &#39;f&#39;]], &#39;lot&#39;: [(&#39;a&#39;, &#39;b&#39;), (&#39;c&#39;, &#39;d&#39;), (&#39;e&#39;, &#39;f&#39;)], &#39;tol&#39;: ([&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;, &#39;d&#39;], [&#39;e&#39;, &#39;f&#39;]), &#39;los&#39;: [&#39;ab&#39;, &#39;cd&#39;, &#39;ef&#39;], &#39;tos&#39;: (&#39;ab&#39;, &#39;cd&#39;, &#39;ef&#39;), &#39;pythons&#39;: </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, &#39;signals&#39;: {&#39;green&#39;: &#39;go&#39;, &#39;yellow&#39;: &#39;go faster&#39;, &#39;red&#39;: [&#39;stop&#39;, &#39;sweat&#39;]}, &#39;first&#39;: {&#39;a&#39;: 1, &#39;b&#39;: &#39;platypus&#39;}, &#39;second&#39;: {&#39;b&#39;: &#39;platypus&#39;}, &#39;third&#39;: {&#39;d&#39;: &#39;donuts&#39;}, &#39;original_signals&#39;: {&#39;green&#39;: &#39;go&#39;, &#39;yellow&#39;: &#39;go faster&#39;, &#39;red&#39;: &#39;smile for the camera&#39;}, &#39;signals_copy&#39;: {&#39;green&#39;: &#39;go&#39;, &#39;yellow&#39;: &#39;go faster&#39;, &#39;red&#39;: [&#39;stop&#39;, &#39;smile&#39;]}, &#39;word&#39;: &#39;onomatopoeia&#39;, &#39;letter_counts&#39;: {&#39;e&#39;: 2, &#39;t&#39;: 2, &#39;r&#39;: 1, &#39;s&#39;: 1, &#39;l&#39;: 1}, &#39;vowels&#39;: &#39;aeiou&#39;, &#39;vowel_counts&#39;: {&#39;e&#39;: 1, &#39;i&#39;: 1, &#39;a&#39;: 2, &#39;o&#39;: 4}, &#39;empty_set&#39;: set(), &#39;even_numbers&#39;: {0, 2, 4, 6, 8}, &#39;odd_numbers&#39;: {1, 3, 5, 7, 9}, &#39;s&#39;: {1, 2}, &#39;drinks&#39;: {&#39;martini&#39;: {&#39;vermouth&#39;, &#39;vodka&#39;}, &#39;black russian&#39;: {&#39;vodka&#39;, &#39;kahlua&#39;}, &#39;white russian&#39;: {&#39;vodka&#39;, &#39;cream&#39;, &#39;kahlua&#39;}, &#39;manhattan&#39;: {&#39;vermouth&#39;, &#39;rye&#39;, &#39;bitters&#39;}, &#39;screwdriver&#39;: {&#39;orange juice&#39;, &#39;vodka&#39;}}, &#39;name&#39;: &#39;screwdriver&#39;, &#39;contents&#39;: {&#39;orange juice&#39;, &#39;vodka&#39;}, &#39;bruss&#39;: {&#39;vodka&#39;, &#39;kahlua&#39;}, &#39;wruss&#39;: {&#39;vodka&#39;, &#39;cream&#39;, &#39;kahlua&#39;}, &#39;a_set&#39;: {1, 4}, &#39;fs&#39;: frozenset({1, 2, 3}), &#39;do_nothing&#39;: &lt;function do_nothing at 0x7feb0fe525e0&gt;, &#39;echo&#39;: &lt;function echo at 0x7feb0f51c820&gt;, &#39;thing&#39;: (&#39;b&#39;, &#39;2&#39;), &#39;whatis&#39;: &lt;function whatis at 0x7feb0f51c430&gt;, &#39;menu&#39;: &lt;function menu at 0x7feb0f51c550&gt;, &#39;buggy&#39;: &lt;function buggy at 0x7feb0f51c4c0&gt;, &#39;print_arg&#39;: &lt;function print_arg at 0x7feb0f51c5e0&gt;, &#39;print_args&#39;: &lt;function print_args at 0x7feb0f51c670&gt;, &#39;args&#39;: (2, 5, 7, &#39;x&#39;), &#39;print_kwargs&#39;: &lt;function print_kwargs at 0x7feb0f51c700&gt;, &#39;outside&#39;: [&#39;one&#39;, &#39;terrible!&#39;, &#39;day&#39;], &#39;mangle&#39;: &lt;function mangle at 0x7feb0f51c790&gt;, &#39;answer&#39;: &lt;function answer at 0x7feb0f51c3a0&gt;, &#39;run_something&#39;: &lt;function run_something at 0x7feb0f51c8b0&gt;, &#39;add_args&#39;: &lt;function add_args at 0x7feb0f51c940&gt;, &#39;run_something_with_args&#39;: &lt;function run_something_with_args at 0x7feb0f51c9d0&gt;, &#39;sum_args&#39;: &lt;function sum_args at 0x7feb0f51ca60&gt;, &#39;run_with_positional_args&#39;: &lt;function run_with_positional_args at 0x7feb0f51caf0&gt;, &#39;outer&#39;: &lt;function outer at 0x7feb0f51cb80&gt;, &#39;knights&#39;: &lt;function knights at 0x7feb0f51cc10&gt;, &#39;knights2&#39;: &lt;function knights2 at 0x7feb0f51cca0&gt;, &#39;edit_story&#39;: &lt;function edit_story at 0x7feb0f51ce50&gt;, &#39;stairs&#39;: [&#39;thud&#39;, &#39;meow&#39;, &#39;thud&#39;, &#39;hiss&#39;], &#39;enliven&#39;: &lt;function enliven at 0x7feb0f51cee0&gt;, &#39;my_range&#39;: &lt;function my_range at 0x7feb0f525040&gt;, &#39;ranger&#39;: &lt;generator object my_range at 0x7feb0fe41a50&gt;, &#39;x&#39;: 4, &#39;genobj&#39;: &lt;generator object &lt;genexpr&gt; at 0x7feb0fe419e0&gt;, &#39;document_it&#39;: &lt;function document_it at 0x7feb0f51cf70&gt;, &#39;add_ints&#39;: &lt;function document_it.&lt;locals&gt;.new_function at 0x7feb0f525280&gt;, &#39;cooler_add_ints&#39;: &lt;function document_it.&lt;locals&gt;.new_function at 0x7feb0f525160&gt;, &#39;animal&#39;: &#39;fruitbat&#39;, &#39;print_global&#39;: &lt;function print_global at 0x7feb0f525310&gt;, &#39;change_and_print_global&#39;: &lt;function change_and_print_global at 0x7feb0f5254c0&gt;, &#39;change_local&#39;: &lt;function change_local at 0x7feb0f5253a0&gt;}</span>
+</span></span></code></pre></div></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>

@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【2.28.6】科学的メソッド - suzmemo</title><meta name=description content=" 仮説を立て、それを検証する
+問題 仮説 予測 検証 分析 問題はパフォーマンス障害の記述
+例 問題：データベースクエリーが遅い原因は何か？ 仮説：騒がしい隣人（クラウドの他のテナント）がディスクI/Oを実行しており、データベースとディスクI/Oを奪い合っている（ファイルシステムを介して） 予測：クエリーの過程でファイルシステムにおけるI/Oレイテンシが計測されるなら、クエリーの遅さの原因はファイルシステムにある 検証：クエリーレイテンシとの比率という形でデータベースファイルシステムレイテンシをトレースすると、ファイルシステム待ちでは5％未満の時間しか使っていないことがわかった 分析：このファイルシステムとディスクはクエリーの速度低下の原因ではない 例 問題：ホストＢからホストＣの時と比べ、ホストAからホストCにHTTP要求を送った時の方法が処理に時間がかかるのはなぜか 仮説：ホストAとBは別のデータセンターにある 予測：ホストAをホストBと同じデータセンターに移すと問題は解決する 検証：ホストAを移してパフォーマンスを計測する 分析：パフォーマンス障害は解決した。仮説に整合する 問題：ファイルシステムキャッシュのサイズを大きくしたらファイルシステムパフォーマンスが低下したのはなぜか 仮説：おおきなキャッシュは格納するレコードの数が多くなっており、小さなキャッシュよりも大きなキャッシュを管理するときの方が計算能力が必要になる 予測：レコードサイズを段階的に小さくしていき、同じ量のデータを格納するために使うレコードの数を増やすと、パフォーマンスが次第に低下する 検証：同じワークロードで段階的にレコードサイズを小さくして検証する 分析：結果をグラフにまとめると、予想と符合した結果になっている これはネガティブテストとよばれる "><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【2.28.6】科学的メソッド</div><div class="mt:16 f:fade-60"><time>Aug 21, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><ul><li><p>仮説を立て、それを検証する</p><ol><li>問題</li><li>仮説</li><li>予測</li><li>検証</li><li>分析</li></ol></li><li><p>問題はパフォーマンス障害の記述</p></li></ul><pre tabindex=0><code>例
+問題：データベースクエリーが遅い原因は何か？
+仮説：騒がしい隣人（クラウドの他のテナント）がディスクI/Oを実行しており、データベースとディスクI/Oを奪い合っている（ファイルシステムを介して）
+予測：クエリーの過程でファイルシステムにおけるI/Oレイテンシが計測されるなら、クエリーの遅さの原因はファイルシステムにある
+検証：クエリーレイテンシとの比率という形でデータベースファイルシステムレイテンシをトレースすると、ファイルシステム待ちでは5％未満の時間しか使っていないことがわかった
+分析：このファイルシステムとディスクはクエリーの速度低下の原因ではない
+</code></pre><pre tabindex=0><code>例
+問題：ホストＢからホストＣの時と比べ、ホストAからホストCにHTTP要求を送った時の方法が処理に時間がかかるのはなぜか
+仮説：ホストAとBは別のデータセンターにある
+予測：ホストAをホストBと同じデータセンターに移すと問題は解決する
+検証：ホストAを移してパフォーマンスを計測する
+分析：パフォーマンス障害は解決した。仮説に整合する
+</code></pre><pre tabindex=0><code>問題：ファイルシステムキャッシュのサイズを大きくしたらファイルシステムパフォーマンスが低下したのはなぜか
+仮説：おおきなキャッシュは格納するレコードの数が多くなっており、小さなキャッシュよりも大きなキャッシュを管理するときの方が計算能力が必要になる
+予測：レコードサイズを段階的に小さくしていき、同じ量のデータを格納するために使うレコードの数を増やすと、パフォーマンスが次第に低下する
+検証：同じワークロードで段階的にレコードサイズを小さくして検証する
+分析：結果をグラフにまとめると、予想と符合した結果になっている
+</code></pre><ul><li>これはネガティブテストとよばれる</li></ul></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>

@@ -1,0 +1,124 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【7】C++の出力 - suzmemo</title><meta name=description content=" ヘッダファイルiostreamをインストールする必要がある #include <iostream> using std::cin; using std::cout; パターンの出力
+問題：正方形の半分
+cout << &#34;#&#34;と cout << &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）で 5 × 5 の正方形を半 分にした形（直角三角形）を作るプログラムを書いてみよう。 問題を簡略化してみる cout << &#34;#&#34;と cout << &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）で 5 × 5 の正方形を作 るプログラムを書いてみよう。 ##### ##### ##### ##### ##### もっと簡略化してみる cout << &#34;#&#34;と cout << &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）を 5 つ並べるプログラ ムを書いてみよう。 ##### for (int hashNum = 1; hashNum <= 5; hasNum++) { cout << &#34;#&#34;; } cout << &#34;\n&#34;; for (int row = 1; row <= 5; row++) { for (int hashNum = 1; hashNum <= 5; hashNum++) { cout << &#34;#&#34;; } cout << &#34;\n&#34;; } 最初の問題を解くためには、hasNum <= 5の部分を変えればいいことはわかる 最初の行には5つ、次は4つというように、数を減らしていく 問題：カウントダウンとカウントアップ 以下のコードのループ内に書く式（expression）を考えてみよう。このプログラムは、5 から 1 まで の数を一行に 1 つずつ順番に表示するものである。 for (int row = 1; row <= 5; row++) { cout << 1 expression << &#34;\n&#34;; } expressionにどのような値が入ればよいか？ rowに-1をかけた値はどうだろう？ 数は減るが、欲しい値ではない 欲しい値と、行番号-1 との差は常に6 6-rowにすればよくね？ for (int row = 1; row <= 5; row++) { for (int hashNum = 1; hashNum <= 6 - row; hashNum++) { cout << &#34;#&#34;; } cout << &#34;\n&#34;; } cout << &#34;#&#34;と cout << &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）で横倒しの三角形を作る プログラムを書いてみよう。 # ## ### #### ### ## # iを書いてみる i 欲しい値 1 1 2 2 3 3 4 4 5 3 6 2 7 1 最大値が4なので 4 - xxx そのまま入れると？ i 欲しい値 4 - i の値 1 1 3 2 2 2 3 3 1 4 4 0 5 3 -1 6 2 -2 7 1 -3 4 - abs(4 - i)を入れればいいことがわかる #include <iostream> using namespace std; int main() { for (int i = 1; i < 8; i++) { for (int j = 1; j <= 4 - abs(4 - i); j++ ) { cout << &#34;#&#34;; } cout << &#34;\n&#34;; } } "><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【7】C++の出力</div><div class="mt:16 f:fade-60"><time>Aug 17, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><ul><li>ヘッダファイル<code>iostream</code>をインストールする必要がある</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> std<span style=color:#f92672>::</span>cin;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> std<span style=color:#f92672>::</span>cout;
+</span></span></code></pre></div><ul><li><p>パターンの出力</p></li><li><p>問題：正方形の半分</p></li></ul><pre tabindex=0><code>cout &lt;&lt; &#34;#&#34;と cout &lt;&lt; &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）で 5 × 5 の正方形を半
+分にした形（直角三角形）を作るプログラムを書いてみよう。
+</code></pre><ul><li>問題を簡略化してみる</li></ul><pre tabindex=0><code>cout &lt;&lt; &#34;#&#34;と cout &lt;&lt; &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）で 5 × 5 の正方形を作
+るプログラムを書いてみよう。
+#####
+#####
+#####
+#####
+#####
+</code></pre><ul><li>もっと簡略化してみる</li></ul><pre tabindex=0><code>cout &lt;&lt; &#34;#&#34;と cout &lt;&lt; &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）を 5 つ並べるプログラ
+ムを書いてみよう。
+#####
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> hashNum <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; hashNum <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>5</span>; hasNum<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;#&#34;</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> row <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; row <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>5</span>; row<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> hashNum <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; hashNum <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>5</span>; hashNum<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;#&#34;</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><ul><li>最初の問題を解くためには、<code>hasNum &lt;= 5</code>の部分を変えればいいことはわかる<ul><li>最初の行には5つ、次は4つというように、数を減らしていく</li></ul></li></ul><pre tabindex=0><code>問題：カウントダウンとカウントアップ
+以下のコードのループ内に書く式（expression）を考えてみよう。このプログラムは、5 から 1 まで
+の数を一行に 1 つずつ順番に表示するものである。
+for (int row = 1; row &lt;= 5; row++) {
+cout &lt;&lt; 1 expression &lt;&lt; &#34;\n&#34;;
+}
+</code></pre><ul><li>expressionにどのような値が入ればよいか？<ul><li>rowに-1をかけた値はどうだろう？<ul><li>数は減るが、欲しい値ではない</li></ul></li><li>欲しい値と、行番号-1 との差は常に6</li><li>6-rowにすればよくね？</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> row <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; row <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>5</span>; row<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> hashNum <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; hashNum <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>6</span> <span style=color:#f92672>-</span> row; hashNum<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;#&#34;</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><pre tabindex=0><code>cout &lt;&lt; &#34;#&#34;と cout &lt;&lt; &#34;\n&#34;の 2 つの出力文だけを使い、ハッシュ記号（#）で横倒しの三角形を作る
+プログラムを書いてみよう。
+#
+##
+###
+####
+###
+##
+#
+</code></pre><ul><li>iを書いてみる</li></ul><table><thead><tr><th>i</th><th>欲しい値</th></tr></thead><tbody><tr><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td></tr><tr><td>3</td><td>3</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>3</td></tr><tr><td>6</td><td>2</td></tr><tr><td>7</td><td>1</td></tr></tbody></table><ul><li>最大値が4なので <code>4 - xxx</code><ul><li>そのまま入れると？</li></ul></li></ul><table><thead><tr><th>i</th><th>欲しい値</th><th>4 - i の値</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>3</td></tr><tr><td>2</td><td>2</td><td>2</td></tr><tr><td>3</td><td>3</td><td>1</td></tr><tr><td>4</td><td>4</td><td>0</td></tr><tr><td>5</td><td>3</td><td>-1</td></tr><tr><td>6</td><td>2</td><td>-2</td></tr><tr><td>7</td><td>1</td><td>-3</td></tr></tbody></table><ul><li><code>4 - abs(4 - i)</code>を入れればいいことがわかる</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>()
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>8</span>; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; j <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>-</span> abs(<span style=color:#ae81ff>4</span> <span style=color:#f92672>-</span> i); j<span style=color:#f92672>++</span> ) {
+</span></span><span style=display:flex><span>            cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;#&#34;</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>
