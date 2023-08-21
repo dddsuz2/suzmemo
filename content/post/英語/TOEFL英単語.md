@@ -6,7 +6,7 @@ seq: [""]
 draft: false
 ---
 
-
+| ------------ | -------- | --------------- |
 | provide      | v        | n: provision    |
 | merchant     | n        |                 |
 | needle       | n        |                 |
@@ -106,4 +106,4 @@ draft: false
 | independence | n        |                 |
 | past         | n, adj   |                 |
 | sculpture    | n        |                 |
-| habitat      | n         |                 |
+| habitat      | n        |                 |
