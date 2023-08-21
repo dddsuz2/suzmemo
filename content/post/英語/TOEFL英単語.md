@@ -6,6 +6,7 @@ seq: [""]
 draft: false
 ---
 
+|              |          |                 |
 | ------------ | -------- | --------------- |
 | provide      | v        | n: provision    |
 | merchant     | n        |                 |
@@ -41,7 +42,7 @@ draft: false
 | vibration    | n        |                 |
 | previous     | adj      |                 |
 | treatment    | n        |                 |
-| scissors     | n        | 複数形で使う     |
+| scissors     | n        |                 |
 | fireplace    | n        |                 |
 | folk         | n        |                 |
 | involve      | v        |                 |
