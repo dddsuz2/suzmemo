@@ -207,4 +207,103 @@ draft: false
 | load               | n, v     |                  |
 | trust              | n, v     |                  |
 | secret             | adj, n   |                  |
-| rhythm             | n         |                  |
+| rhythm             | n        |                  |
+| settle             | v        |                  |
+| continue           | v        |                  |
+| atlas              | n        |                  |
+| complaint          | n        |                  |
+| reply              | v, n     |                  |
+| count              | v        |                  |
+| real               | adj      |                  |
+| electronic         | adj      |                  |
+| fragment           | n, v     |                  |
+| marsh              | n        |                  |
+| trend              | n        |                  |
+| right              | n        |                  |
+| vary               | v        | adj: variable    |
+| author             | n        |                  |
+| nebula             | n        |                  |
+| routine            | adj      |                  |
+| annual             | adj      |                  |
+| courage            | n        |                  |
+| algae              | n        | sin: alga        |
+| emphasize          | v        | n: emphasis      |
+| civic              | adj      |                  |
+| bright             | adj      |                  |
+| actual             | adj      |                  |
+| escape             | v, n     |                  |
+| growth             | n        | v: grow          |
+| tragedy            | n        | anti: comedy     |
+| permit             | v        | n: permission    |
+| believe            | v        | n: belief        |
+| union              | n        |                  |
+| fellow             | n        |                  |
+| disaster           | n        |                  |
+| task               | n        |                  |
+| coast              | n        |                  |
+| difference         | n        | adj: different   |
+| numerous           | adj      |                  |
+| guess              | v, n     |                  |
+| biodiversity       | n        |                  |
+| convenient         | adj      | n: convenience   |
+| safety             | n        | adj: safe        |
+| efficient          | adj      | n: efficiency    |
+| agriculture        | n        |                  |
+| grab               | v        |                  |
+| patient            | n, adj   |                  |
+| force              | n, v     |                  |
+| primitive          | adj      |                  |
+| final              | adj      |                  |
+| trash              | n        |                  |
+| awful              | adj      |                  |
+| division           | n        |                  |
+| modern             | adj      |                  |
+| repeat             | v        | n: repetition    |
+| plant              | n        |                  |
+| meanwhile          | adv      |                  |
+| opinion            | n        |                  |
+| thirsty            | adj      |                  |
+| crime              | n        | adj: criminal    |
+| stable             | adj, n   |                  |
+| occur              | v        | n: occurrence    |
+| actress            | n        |                  |
+| dust               | n        |                  |
+| throw              | v        |                  |
+| connect            | v        | n: connection    |
+| crop               | n        |                  |
+| toe                | n        |                  |
+| flag               | v, n     |                  |
+| hostage            | n        |                  |
+| fee                |          |                  |
+| committee          | n        |                  |
+| blood              | n        |                  |
+| motif              | n        |                  |
+| elderly            | adj, n   |                  |
+| store              | n        |                  |
+| ceremony           | n        |                  |
+| beehive            | n        |                  |
+| attitude           | n        |                  |
+| election           | n        |                  |
+| doubt              | n, v     |                  |
+| internal           | adj      | anti: external   |
+| compare            | v        | n: comparison    |
+| harbor             | n        |                  |
+| media              | n        | sin: medium      |
+| invest             | v        |                  |
+| plate              | n        |                  |
+| Atlantic Ocean     | n        |                  |
+| stock              | n        |                  |
+| wrinkle            | n        |                  |
+| raise              | v        |                  |
+| shave              | v        |                  |
+| surface            | n        |                  |
+| spectacle          | n        |                  |
+| playing field      | n        |                  |
+| rate               | n        |                  |
+| commerce           | n        | adj: commercial  |
+| exception          | n        |                  |
+| blossom            | n        |                  |
+| suprise            | n, v     |                  |
+| elementary         | adj      |                  |
+| performance        | n        |                  |
+| selfish            | adj      |                  |
