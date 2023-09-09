@@ -2,6 +2,10 @@
 suzmemo
 =======
 
+# ElasticStack
+  
+ - [【1】ElasticSearchとは？](https://dddsuz2.github.io/suzmemo/1elasticsearch%E3%81%A8%E3%81%AF/)  
+
 # Splunk
   
  - [【Splunk Enterprise 1】Splunkの主要コンポーネント](https://dddsuz2.github.io/suzmemo/splunk-enterprise-1splunk%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/)  
