@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【1.4】データ分析とデータベース - suzmemo</title><meta name=description content="内容 データ分析基盤 基幹システム 業務上必須となるシステム トランザクション単位で、データベースの更新を行う OLTPと呼ばれる 正確・高速にデータ行を更新する仕組みが必要 行に対して高速にアクセスできるデータベースを行データベースという 関係データベースがよく用いられる 分析システム データ分析のためのシステム 複雑で分析的な問い合わせに素早く回答する必要がある OLAP データのスナップショットをとり、別のデータベースにうつす 同じ列を分析することが多いため、列指向のデータベースが用いられる データウェアハウスなど BI 企業などの組織に関するデータを収集・蓄積してそれを分析する 分析システムとデータ分析基盤が必要 データ分析基盤 データ分析のための、継続的なデータ蓄積場所 生成 データ分析のためのデータを生成する トランザクション処理を行ったときなど 生成されたデータをデータソースと呼ぶ 収集 収集したデータの加工前・加工後のデータを保存する もとのデータの保存場所のことをデータレイクという 蓄積 加工、正規化を行い、データの品質を高める データクレンジングという 加工にはETLツールが使用される 加工されたデータはデータウェアハウスに蓄積される 活用 データマイニングでデータ分析 特定の用途で取り出したデータをデータマートという データレイク 収集したデータを蓄積しておく場所 分散ストレージが用いられる データウェアハウス データレイクに収集したデータが加工され、再構成されて格納された分析用データベースのことをいう データマイニング データ解析の技法を大量のデータに適用すること ビッグデータ RDBMSだけでは扱いきれないデータのこと Volume（データの量） Variety(データの種類) Velocity(データの発生/処理の速度/速度) ビッグデータ分析のためのSQL OLAP関数などを用いたSQL ほとんどのDBMS製品が対応している AI 人間と同様の知能をコンピュータ上で実現させるための技術 AIとビッグデータ データクレンジングや加工を事前に行う必要がある ツッコミ・考察 疑問点 リンク "><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【1.4】データ分析とデータベース</div><div class="mt:16 f:fade-60"><time>Sep 20, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><h3 id=内容>内容</h3><ul><li>データ分析基盤<ul><li>基幹システム<ul><li>業務上必須となるシステム</li><li>トランザクション単位で、データベースの更新を行う<ul><li>OLTPと呼ばれる<ul><li>正確・高速にデータ行を更新する仕組みが必要<ul><li>行に対して高速にアクセスできるデータベースを行データベースという</li><li>関係データベースがよく用いられる</li></ul></li></ul></li></ul></li></ul></li></ul></li><li>分析システム<ul><li>データ分析のためのシステム<ul><li>複雑で分析的な問い合わせに素早く回答する必要がある<ul><li>OLAP<ul><li>データのスナップショットをとり、別のデータベースにうつす</li><li>同じ列を分析することが多いため、列指向のデータベースが用いられる<ul><li>データウェアハウスなど</li></ul></li></ul></li></ul></li></ul></li></ul></li><li>BI<ul><li>企業などの組織に関するデータを収集・蓄積してそれを分析する<ul><li>分析システムとデータ分析基盤が必要<ul><li>データ分析基盤<ul><li>データ分析のための、継続的なデータ蓄積場所<ul><li>生成<ul><li>データ分析のためのデータを生成する</li><li>トランザクション処理を行ったときなど</li><li>生成されたデータをデータソースと呼ぶ</li></ul></li><li>収集<ul><li>収集したデータの加工前・加工後のデータを保存する<ul><li>もとのデータの保存場所のことをデータレイクという</li></ul></li></ul></li><li>蓄積<ul><li>加工、正規化を行い、データの品質を高める<ul><li>データクレンジングという</li><li>加工にはETLツールが使用される</li><li>加工されたデータはデータウェアハウスに蓄積される</li></ul></li></ul></li><li>活用<ul><li>データマイニングでデータ分析<ul><li>特定の用途で取り出したデータをデータマートという</li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li>データレイク<ul><li>収集したデータを蓄積しておく場所<ul><li>分散ストレージが用いられる</li></ul></li></ul></li><li>データウェアハウス<ul><li>データレイクに収集したデータが加工され、再構成されて格納された分析用データベースのことをいう</li></ul></li><li>データマイニング<ul><li>データ解析の技法を大量のデータに適用すること</li></ul></li><li>ビッグデータ<ul><li>RDBMSだけでは扱いきれないデータのこと<ul><li>Volume（データの量）</li><li>Variety(データの種類)</li><li>Velocity(データの発生/処理の速度/速度)</li></ul></li><li>ビッグデータ分析のためのSQL<ul><li>OLAP関数などを用いたSQL</li><li>ほとんどのDBMS製品が対応している</li></ul></li></ul></li><li>AI<ul><li>人間と同様の知能をコンピュータ上で実現させるための技術</li><li>AIとビッグデータ<ul><li>データクレンジングや加工を事前に行う必要がある</li></ul></li></ul></li></ul><hr><h3 id=ツッコミ考察>ツッコミ・考察</h3><ul><li></li></ul><hr><h3 id=疑問点>疑問点</h3><ul><li></li></ul><hr><h3 id=リンク>リンク</h3><ul><li></li></ul></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>
