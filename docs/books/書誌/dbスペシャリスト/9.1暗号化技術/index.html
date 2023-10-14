@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【9.1】暗号化技術 - suzmemo</title><meta name=description content="内容 普通の文章を読めないようにすることを暗号化 元に戻すことを復号 暗号化及び復号に必要となるもの 暗号アルゴリズム 鍵 共通鍵暗号方式 暗号鍵と復号鍵が共通 共有鍵 暗号化する経路の数だけ鍵が必要 鍵を秘密にして共有しなければならない 鍵を受け渡しする方法が重要 暗号化する経路の数だけ鍵が必要になる 共通鍵暗号のアルゴリズム DES ブロック暗号 56ビットの鍵 AES ブロック暗号 128, 192, 256ビットから鍵を選択できる RC4 ストリーム暗号の一種 公開鍵暗号 暗号化鍵と復号鍵が異なる 使用する人ごとに公開鍵と秘密鍵のペア（キーペア） 公開鍵で暗号化すると、同じ人の秘密鍵で復号できる 秘密鍵で暗号化すると、同じ人の公開鍵で復号できる 公開鍵暗号のアルゴリズム RSA 大きい数での素因数分解の困難さを安全性の根拠としている 楕円曲線暗号 楕円曲線上の離散対数問題を安全性の根拠としている ハッシュ 平文を変換してハッシュを求める 送りたいデータと合わせてハッシュ値を送ることで改ざんを検出できる ハッシュ関数のアルゴリズム MD5 128ビットのハッシュ値を出力する SHA-1 160ビットのハッシュ値を出力 SHA-2 SHA-1の後継 デジタル署名 送信者の秘密鍵で暗号化し、公開鍵で復号する 送信者の本人性を確認できる PKI 政府など信頼できる第3機関の認証局に証明書を発行してもらう 政府が運営する認証局: GPKI サーバ証明書とクライアント証明書 CRLとOCSP CRL 失効したデジタル証明書のシリアル番号のリスト OCSP デジタル証明書の執行情報を取得するプロトコル SSL/TLS 機能 認証 暗号化 改ざんを検出 最初に通信相手を確認するために認証を行う サーバがサーバ証明書をクライアントに送り、クライアントが正当性を確認する サーバ証明書の公開鍵を用いて、クライアントはデータの暗号化に使う共通鍵の種を、サーバの公開鍵で暗号化して送る IPsec IPパケット単位で、データの改ざん防止や秘匿機能を提供する S/MIME MIME形式の電子メールを暗号化し、デジタル署名を行う PGP S/MINEと同様の電子メールの暗号方式 SSH ハイブリッド暗号 ツッコミ・考察 疑問点 リンク "><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【9.1】暗号化技術</div><div class="mt:16 f:fade-60"><time>Oct 1, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><h3 id=内容>内容</h3><ul><li>普通の文章を読めないようにすることを暗号化</li><li>元に戻すことを復号</li><li>暗号化及び復号に必要となるもの<ul><li>暗号アルゴリズム</li><li>鍵</li></ul></li><li>共通鍵暗号方式<ul><li>暗号鍵と復号鍵が共通<ul><li>共有鍵</li></ul></li><li>暗号化する経路の数だけ鍵が必要</li><li>鍵を秘密にして共有しなければならない<ul><li>鍵を受け渡しする方法が重要</li></ul></li><li>暗号化する経路の数だけ鍵が必要になる</li><li>共通鍵暗号のアルゴリズム<ul><li>DES<ul><li>ブロック暗号</li><li>56ビットの鍵</li></ul></li><li>AES<ul><li>ブロック暗号</li><li>128, 192, 256ビットから鍵を選択できる</li></ul></li><li>RC4<ul><li>ストリーム暗号の一種</li></ul></li></ul></li></ul></li><li>公開鍵暗号<ul><li>暗号化鍵と復号鍵が異なる</li><li>使用する人ごとに公開鍵と秘密鍵のペア（キーペア）<ul><li>公開鍵で暗号化すると、同じ人の秘密鍵で復号できる</li><li>秘密鍵で暗号化すると、同じ人の公開鍵で復号できる</li></ul></li><li>公開鍵暗号のアルゴリズム<ul><li>RSA<ul><li>大きい数での素因数分解の困難さを安全性の根拠としている</li></ul></li><li>楕円曲線暗号<ul><li>楕円曲線上の離散対数問題を安全性の根拠としている</li></ul></li></ul></li></ul></li><li>ハッシュ<ul><li>平文を変換してハッシュを求める</li><li>送りたいデータと合わせてハッシュ値を送ることで改ざんを検出できる</li><li>ハッシュ関数のアルゴリズム<ul><li>MD5<ul><li>128ビットのハッシュ値を出力する</li></ul></li><li>SHA-1<ul><li>160ビットのハッシュ値を出力</li></ul></li><li>SHA-2<ul><li>SHA-1の後継</li></ul></li></ul></li></ul></li><li>デジタル署名<ul><li>送信者の秘密鍵で暗号化し、公開鍵で復号する</li><li>送信者の本人性を確認できる</li></ul></li><li>PKI<ul><li>政府など信頼できる第3機関の認証局に証明書を発行してもらう<ul><li>政府が運営する認証局: GPKI</li></ul></li><li>サーバ証明書とクライアント証明書</li></ul></li><li>CRLとOCSP<ul><li>CRL<ul><li>失効したデジタル証明書のシリアル番号のリスト</li></ul></li><li>OCSP<ul><li>デジタル証明書の執行情報を取得するプロトコル</li></ul></li></ul></li><li>SSL/TLS<ul><li>機能<ul><li>認証</li><li>暗号化</li><li>改ざんを検出</li></ul></li><li>最初に通信相手を確認するために認証を行う<ul><li>サーバがサーバ証明書をクライアントに送り、クライアントが正当性を確認する</li><li>サーバ証明書の公開鍵を用いて、クライアントはデータの暗号化に使う共通鍵の種を、サーバの公開鍵で暗号化して送る</li></ul></li></ul></li><li>IPsec<ul><li>IPパケット単位で、データの改ざん防止や秘匿機能を提供する</li></ul></li><li>S/MIME<ul><li>MIME形式の電子メールを暗号化し、デジタル署名を行う</li></ul></li><li>PGP<ul><li>S/MINEと同様の電子メールの暗号方式</li></ul></li><li>SSH<ul><li>ハイブリッド暗号</li></ul></li></ul><hr><h3 id=ツッコミ考察>ツッコミ・考察</h3><ul><li></li></ul><hr><h3 id=疑問点>疑問点</h3><ul><li></li></ul><hr><h3 id=リンク>リンク</h3><ul><li></li></ul></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>
