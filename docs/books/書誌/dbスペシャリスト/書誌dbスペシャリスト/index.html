@@ -1,0 +1,120 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>【書誌】DBスペシャリスト.md - suzmemo</title><meta name=description content="内容 ツッコミ・考察 疑問点 リンク 【1】データベースの基本
+【1.1】関係モデル
+【1.2】データベースの3値理論
+【1.3】システム開発とデータベース
+【1.3.1】データ中心アプローチ
+【1.4】データ分析とデータベース
+【2.0】正規化
+【2.1】第1正規形
+【2.2】第2正規形
+【2.3】第3正規形
+【2.4】高次の正規化
+【3.0】関係演算
+【3.1】結合演算
+【4】データベース設計
+【4.1】トップダウンアプローチ
+【4.2】ボトムアップアプローチ
+【4.3】正規化による普通合と非正規化
+【4.4】データベースの制約
+【4.5】データベースシステム設計
+【4.6】E-R図
+【4.7】スーパータイプとサブタイプ
+【4.8】E-R図での表現
+【5】SQL
+【5.1】SQL-DDL
+【5.2】SQL-DCL
+【5.3】SQL-DML
+【5.3.1】SQL-DMLで使用される関数や演算
+【5.4】データ分析のためのSQL
+【5.5】SQLのポイント
+【5.6】SQLでできること
+【6】DBMS
+【6.1】インデックス
+【6.1.1】性能設計
+【6.1.2】テーブルの結合
+【6.2】データベースシステムのハードウェア
+【6.3】トランザクション管理
+【6.3.1】ロック
+【6.3.2】トランザクション分離レベル
+【6.3.3】障害回復処理
+【6.4】分散データベース
+【7】概念設計
+【7.1】概念データモデル作成上の注意点
+【7.2】午後2問題の対策
+【8】論理設計
+【8.1】移行設計
+【8.2】物理設計
+【8.3】信頼性設計
+【8.3.1】システムの冗長化
+【8.4】性能設計
+【8.5】運用・保守設計
+【9】セキュリティ
+【9.1】暗号化技術
+【9.2】データベースセキュリティ
+【10】最新データベース技術
+【10.1】データウェアハウス
+【10.2】オブジェクト指向データベース
+【10.3】仮想化とストレージ
+【書誌】DBスペシャリスト"><meta name=author content><link href=https://unpkg.com/@master/normal.css rel=stylesheet><script src=https://unpkg.com/@master/style@1.5.0></script>
+<script src=https://unpkg.com/@master/styles@1.13.0></script>
+<script src=https://unpkg.com/master-styles-group></script>
+<script src=https://unpkg.com/themes.js></script>
+<script>window.themes=window.themes||new window.Themes</script><style>:root{--font-sans:"Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}</style></head><body class="bg:fade-84@dark font:fade-16@dark font:sans"><nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000"><div class="h:full
+w:full
+max-w:1200
+mx:auto
+px:32
+d:flex
+align-items:center"><div><a href=/ class="mr-3 font:extralight">suzmemo</a></div><div class=ml:auto><a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/ title>Home</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=/suzmemo/about/ title>About</a>
+<a class="font:semibold
+font:fade
+font:fade-10:hover
+font:fade-30.active
+px:8
+transition:150ms;ease-in" href=index.xml title>Subscribe</a></div></div></nav><div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word"><div class="max-w:700 w:full box:content-box"><article class="box:border-box pt:32"><header class=mb:32><div class="font:40 font:extrabold">【書誌】DBスペシャリスト.md</div><div class="mt:16 f:fade-60"><time>Oct 8, 2023</time></div></header><div class="_:where(a):hover{text-decoration-color:fade}
+_:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+_:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+_:where(code){font:90%;_v:middle}
+_:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+_:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+_:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+_:where(h1){font:40;_font:extrabold}
+_:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+_:where(h1,h2,h3,h4,h5,h6){mt:2em}
+_:where(h2){mb:1em;_font:32}
+_:where(h3){font:24}
+_:where(h4){font:20}
+_:where(h5){font:16}
+_:where(h6){font:14}
+_:where(li)::marker{font:fade-44;_font:fade-68@dark}
+_:where(li){pl:.375em}
+_:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+_:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+_:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+>:first-child{mt:0!}
+_:where(pre){p:20;_r:8;_overflow:auto}
+_:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+_:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+_:where(table){width:full;_border-spacing:0}
+_:where(td){v:baseline}
+_:where(td,th):first-child{pl:0}
+_:where(td,th):last-child{pr:0}
+_:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+_:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+_:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+_:where(ul){list-style-type:disc}
+_:where(ul,ol,blockquote){pl:1.5em}
+_:where(video,img){max-width:full}
+_:where(a,mark){text-underline-offset:3}
+_:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}"><h3 id=内容>内容</h3><ul><li></li></ul><hr><h3 id=ツッコミ考察>ツッコミ・考察</h3><ul><li></li></ul><hr><h3 id=疑問点>疑問点</h3><ul><li></li></ul><hr><h3 id=リンク>リンク</h3><p><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/1%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/>【1】データベースの基本</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/1.1%E9%96%A2%E4%BF%82%E3%83%A2%E3%83%87%E3%83%AB/>【1.1】関係モデル</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/1.2%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE3%E5%80%A4%E7%90%86%E8%AB%96/>【1.2】データベースの3値理論</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/1.3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E9%96%8B%E7%99%BA%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9/>【1.3】システム開発とデータベース</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/1.3.1%E3%83%87%E3%83%BC%E3%82%BF%E4%B8%AD%E5%BF%83%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81/>【1.3.1】データ中心アプローチ</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/1.4%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9/>【1.4】データ分析とデータベース</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/2.0%E6%AD%A3%E8%A6%8F%E5%8C%96/>【2.0】正規化</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/2.1%E7%AC%AC1%E6%AD%A3%E8%A6%8F%E5%BD%A2/>【2.1】第1正規形</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/2.2%E7%AC%AC2%E6%AD%A3%E8%A6%8F%E5%BD%A2/>【2.2】第2正規形</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/2.3%E7%AC%AC3%E6%AD%A3%E8%A6%8F%E5%BD%A2/>【2.3】第3正規形</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/2.4%E9%AB%98%E6%AC%A1%E3%81%AE%E6%AD%A3%E8%A6%8F%E5%8C%96/>【2.4】高次の正規化</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/3.0%E9%96%A2%E4%BF%82%E6%BC%94%E7%AE%97/>【3.0】関係演算</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/3.1%E7%B5%90%E5%90%88%E6%BC%94%E7%AE%97/>【3.1】結合演算</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E8%A8%AD%E8%A8%88/>【4】データベース設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.1%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81/>【4.1】トップダウンアプローチ</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.2%E3%83%9C%E3%83%88%E3%83%A0%E3%82%A2%E3%83%83%E3%83%97%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81/>【4.2】ボトムアップアプローチ</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.3%E6%AD%A3%E8%A6%8F%E5%8C%96%E3%81%AB%E3%82%88%E3%82%8B%E6%99%AE%E9%80%9A%E5%90%88%E3%81%A8%E9%9D%9E%E6%AD%A3%E8%A6%8F%E5%8C%96/>【4.3】正規化による普通合と非正規化</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.4%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E5%88%B6%E7%B4%84/>【4.4】データベースの制約</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.5%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88/>【4.5】データベースシステム設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.6e-r%E5%9B%B3/>【4.6】E-R図</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.7%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BF%E3%82%A4%E3%83%97%E3%81%A8%E3%82%B5%E3%83%96%E3%82%BF%E3%82%A4%E3%83%97/>【4.7】スーパータイプとサブタイプ</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/4.8e-r%E5%9B%B3%E3%81%A7%E3%81%AE%E8%A1%A8%E7%8F%BE/>【4.8】E-R図での表現</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5sql/>【5】SQL</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5.1sql-ddl/>【5.1】SQL-DDL</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5.2sql-dcl/>【5.2】SQL-DCL</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5.3sql-dml/>【5.3】SQL-DML</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5.3.1sql-dml%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%95%E3%82%8C%E3%82%8B%E9%96%A2%E6%95%B0%E3%82%84%E6%BC%94%E7%AE%97/>【5.3.1】SQL-DMLで使用される関数や演算</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5.4%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEsql/>【5.4】データ分析のためのSQL</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5.5sql%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88/>【5.5】SQLのポイント</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/5.6sql%E3%81%A7%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%93%E3%81%A8/>【5.6】SQLでできること</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6dbms/>【6】DBMS</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.1%E3%82%A4%E3%83%B3%E3%83%87%E3%83%83%E3%82%AF%E3%82%B9/>【6.1】インデックス</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.1.1%E6%80%A7%E8%83%BD%E8%A8%AD%E8%A8%88/>【6.1.1】性能設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.1.2%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E7%B5%90%E5%90%88/>【6.1.2】テーブルの結合</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.2%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2/>【6.2】データベースシステムのハードウェア</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.3%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86/>【6.3】トランザクション管理</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.3.1%E3%83%AD%E3%83%83%E3%82%AF/>【6.3.1】ロック</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.3.2%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E9%9B%A2%E3%83%AC%E3%83%99%E3%83%AB/>【6.3.2】トランザクション分離レベル</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.3.3%E9%9A%9C%E5%AE%B3%E5%9B%9E%E5%BE%A9%E5%87%A6%E7%90%86/>【6.3.3】障害回復処理</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/6.4%E5%88%86%E6%95%A3%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9/>【6.4】分散データベース</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/7%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88/>【7】概念設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/7.1%E6%A6%82%E5%BF%B5%E3%83%87%E3%83%BC%E3%82%BF%E3%83%A2%E3%83%87%E3%83%AB%E4%BD%9C%E6%88%90%E4%B8%8A%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/>【7.1】概念データモデル作成上の注意点</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/7.2%E5%8D%88%E5%BE%8C2%E5%95%8F%E9%A1%8C%E3%81%AE%E5%AF%BE%E7%AD%96/>【7.2】午後2問題の対策</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/8%E8%AB%96%E7%90%86%E8%A8%AD%E8%A8%88/>【8】論理設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/8.1%E7%A7%BB%E8%A1%8C%E8%A8%AD%E8%A8%88/>【8.1】移行設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/8.2%E7%89%A9%E7%90%86%E8%A8%AD%E8%A8%88/>【8.2】物理設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/8.3%E4%BF%A1%E9%A0%BC%E6%80%A7%E8%A8%AD%E8%A8%88/>【8.3】信頼性設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/8.3.1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%86%97%E9%95%B7%E5%8C%96/>【8.3.1】システムの冗長化</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/8.4%E6%80%A7%E8%83%BD%E8%A8%AD%E8%A8%88/>【8.4】性能設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/8.5%E9%81%8B%E7%94%A8%E4%BF%9D%E5%AE%88%E8%A8%AD%E8%A8%88/>【8.5】運用・保守設計</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/9%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/>【9】セキュリティ</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/9.1%E6%9A%97%E5%8F%B7%E5%8C%96%E6%8A%80%E8%A1%93/>【9.1】暗号化技術</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/9.2%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/>【9.2】データベースセキュリティ</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/10%E6%9C%80%E6%96%B0%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%8A%80%E8%A1%93/>【10】最新データベース技術</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/10.1%E3%83%87%E3%83%BC%E3%82%BF%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%8F%E3%82%A6%E3%82%B9/>【10.1】データウェアハウス</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/10.2%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9/>【10.2】オブジェクト指向データベース</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/10.3%E4%BB%AE%E6%83%B3%E5%8C%96%E3%81%A8%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8/>【10.3】仮想化とストレージ</a><br><a href=https://dddsuz2.github.io/suzmemo/books/%E6%9B%B8%E8%AA%8C/db%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/%E6%9B%B8%E8%AA%8Cdb%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AA%E3%82%B9%E3%83%88/>【書誌】DBスペシャリスト</a></p></div></article><footer class=py:24><div class="f:fade-30 f:14 mb:8"></div><div class="f:fade-60 f:12">Theme <a class=f:bold href=https://github.com/serkodev/holy _target=_blank>Holy</a></div></footer></div></div></body></html>
